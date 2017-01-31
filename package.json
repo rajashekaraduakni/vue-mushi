@@ -1,0 +1,27 @@
+{
+  "name": "vue-mushi",
+  "version": "0.0.1",
+  "description": "Vue plugin with many CMS related utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giseudo/vue-mushi.git"
+  },
+  "keywords": [
+    "vue",
+    "cms",
+    "mushi",
+    "component",
+    "layout",
+    "template"
+  ],
+  "author": "Giseudo Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Giseudo/vue-mushi/issues"
+  },
+  "homepage": "https://github.com/Giseudo/vue-mushi#readme"
+}
