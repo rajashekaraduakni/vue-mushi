@@ -13,9 +13,9 @@ import {
 } from './components'
 
 import {
-	ListLayout,
-	FormLayout,
-	SidebarLayout
+	ListTemplate,
+	FormTemplate,
+	SidebarTemplate
 } from './layouts';
 
 import {
@@ -44,10 +44,10 @@ export default function (Vue, options) {
 	Vue.component('mu-gallery-multiple', GalleryMultipleComponent);
 	Vue.component('mu-gallery-dialog', GalleryDialogComponent);
 
-	// Layouts
-	Vue.component('mu-list-layout', ListLayout);
-	Vue.component('mu-form-layout', FormLayout);
-	Vue.component('mu-sidebar-layout', SidebarLayout);
+	// Templates
+	Vue.component('mu-list-template', ListTemplate);
+	Vue.component('mu-form-template', FormTemplate);
+	Vue.component('mu-sidebar-template', SidebarTemplate);
 
 	// Directives
 	Vue.directive('mu-load-more', LoadMoreDirective);
