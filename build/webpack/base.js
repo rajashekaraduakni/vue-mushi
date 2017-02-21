@@ -14,6 +14,9 @@ export default {
 		publicPath: config.publicPath,
 		filename: '[name].[chunkhash:8].js',
 	},
+	resolve: {
+		extensions: ['.js', '.vue', '.json']
+	},
 	module: {
 		rules: [
 			{
