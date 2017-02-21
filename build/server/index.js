@@ -32,6 +32,7 @@ compiler.plugin('compilation', (compilation) => {
 app.use(devMiddlewareInstance);
 app.use(hotMiddlewareInstance);
 app.use('/', express.static(path.join(rootPath, config.docsPath)));
+app.use('/assets', express.static(path.join(rootPath, config.assetsPath)));
 
 devMiddlewareInstance.waitUntilValid(() => {
 	let uri = 'http://localhost:8080';

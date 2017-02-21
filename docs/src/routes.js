@@ -1,9 +1,9 @@
-import Introduction from './pages/Introduction';
+import Authentication from './pages/Authentication';
 
 export default [
 	{
 		path: '/',
-		name: 'introduction',
-		component: Introduction
+		name: 'authentication',
+		component: Authentication
 	}
 ];

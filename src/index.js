@@ -1,4 +1,4 @@
-import {
+/*import {
 	InputTextComponent,
 	InputTextareaComponent,
 	SelectComponent,
@@ -11,6 +11,7 @@ import {
 	GalleryDialogComponent,
 	UploaderComponent
 } from './components'
+
 
 import {
 	ListTemplate,
@@ -25,8 +26,11 @@ import {
 import {
 	SlugifyFilter
 } from './filters';
+*/
+import Auth from './templates/auth/Auth';
 
 export default function (Vue, options) {
+/*
 	// Inputs
 	Vue.component('mu-input-text', InputTextComponent); // mu-text is better?
 	Vue.component('mu-input-textarea', InputTextareaComponent); // mu-textarea is better?
@@ -54,4 +58,6 @@ export default function (Vue, options) {
 
 	// Filters
 	Vue.filter('slugify', SlugifyFilter);
+*/
+	Vue.component('mu-auth', Auth);
 }
