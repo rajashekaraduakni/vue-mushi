@@ -1,9 +1,11 @@
-import Authentication from './pages/Authentication';
+import authRoutes from './pages/auth/routes';
+import panelRoutes from './pages/panel/routes';
 
 export default [
 	{
 		path: '/',
-		name: 'authentication',
-		component: Authentication
-	}
-];
+		redirect: '/auth'
+	},
+	...authRoutes,
+	...panelRoutes
+]

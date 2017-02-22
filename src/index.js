@@ -28,6 +28,7 @@ import {
 } from './filters';
 */
 import Auth from './templates/auth/Auth';
+import AuthForm from './templates/auth/AuthForm';
 
 export default function (Vue, options) {
 /*
@@ -60,4 +61,5 @@ export default function (Vue, options) {
 	Vue.filter('slugify', SlugifyFilter);
 */
 	Vue.component('mu-auth', Auth);
+	Vue.component('mu-auth-form', AuthForm);
 }
