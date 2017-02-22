@@ -1,6 +1,6 @@
 <template>
 	<div class="auth">
-		<md-whiteframe md-elevation="6" class="auth__content">
+		<md-whiteframe md-elevation="6" class="auth__container">
 			<!-- Header -->
 			<md-whiteframe md-elevation="1" class="auth__header">
 				<slot name="header">
@@ -44,7 +44,7 @@
 		right: 0;
 		bottom: 0;
 		z-index: 20;
-		&__content{
+		&__container{
 			min-width: 350px;
 			border-radius: 4px;
 			position: absolute;

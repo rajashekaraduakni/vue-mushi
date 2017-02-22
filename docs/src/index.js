@@ -4,19 +4,13 @@ import VueMushi from '../../src';
 import VueMaterial from 'vue-material';
 import VeeValidate from 'vee-validate';
 import App from './App';
-import routes from './routes';
+import router from './router';
 import config from './config';
 
 Vue.use(VueRouter);
 Vue.use(VueMushi);
 Vue.use(VueMaterial);
 Vue.use(VeeValidate);
-
-let router = new VueRouter({
-	mode: 'hash',
-	base: window.location.pathname,
-	routes
-});
 
 let Docs = Vue.component('app', App);
 //

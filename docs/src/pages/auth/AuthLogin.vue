@@ -64,6 +64,8 @@
 </template>
 
 <script>
+	import router from '../../router';
+
 	export default {
 		data() {
 			return {
@@ -79,7 +81,7 @@
 							return;
 						}
 
-						alert('Form Submitted!');
+						router.push('/panel');
 					})
 			}
 		}
