@@ -30,6 +30,7 @@ import {
 import Auth from './templates/auth/Auth';
 import AuthForm from './templates/auth/AuthForm';
 import Panel from './templates/panel/Panel';
+import Container from './templates/container/Container';
 
 export default function (Vue, options) {
 /*
@@ -64,4 +65,5 @@ export default function (Vue, options) {
 	Vue.component('mu-auth', Auth);
 	Vue.component('mu-auth-form', AuthForm);
 	Vue.component('mu-panel', Panel);
+	Vue.component('mu-container', Container);
 }

@@ -2,12 +2,14 @@
 	<div class="auth">
 		<md-whiteframe md-elevation="6" class="auth__container">
 			<!-- Header -->
-			<md-whiteframe md-elevation="1" class="auth__header">
-				<slot name="header">
-					<md-avatar class="md-large">
-						<img src="assets/images/abstract-shape.jpg" alt="Brand">
-					</md-avatar>
-				</slot>
+			<md-whiteframe md-elevation="1"> 
+				<md-toolbar class="auth__header">
+					<slot name="header">
+						<md-avatar class="md-large">
+							<img src="assets/images/abstract-shape.jpg" alt="Brand">
+						</md-avatar>
+					</slot>
+				</md-toolbar>
 			</md-whiteframe>
 
 			<form
@@ -61,7 +63,6 @@
 		&__header{
 			margin-bottom: 20px;
 			padding: 20px 0;
-			background: #00b0ff;
 			color: white;
 			text-align: center;
 		}

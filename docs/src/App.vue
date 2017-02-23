@@ -1,7 +1,5 @@
 <template>
-	<div>
-		<router-view></router-view>
-	</div>
+	<router-view></router-view>
 </template>
 
 <script>
@@ -12,6 +10,10 @@
 
 <style lang="sass">
 	@import "~vue-material/dist/vue-material.css";
+
+	body {
+		height: 100%;
+	}
 
 	// Slide fade right transitions
 	.scale-fade-enter-active {

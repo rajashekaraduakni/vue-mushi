@@ -44,10 +44,13 @@
 	}
 </script>
 
-<style>
+<style lang="sass" scoped>
 	.panel{
+		height: 100%;
+		overflow: hidden;
+		position: relative;
 		&__container{
-			
+			height: 100%;
 		}
 	}
 </style>
