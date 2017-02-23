@@ -25,6 +25,10 @@ export default merge(baseWebpackConfig, {
 			{
 				test: /\.scss$/,
 				use: ['vue-style-loader', 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.json$/,
+				use: ['json-loader']
 			}
 		]
 	},

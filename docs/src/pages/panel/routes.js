@@ -1,16 +1,18 @@
 import Panel from './Panel';
-import Dashboard from '../dashboard/Dashboard';
+import dashboardRoutes from '../dashboard/routes';
+import userRoutes from '../user/routes';
 
 export default [
 	{
 		path: '/panel',
-		name: 'panel',
 		component: Panel,
 		children: [
 			{
 				path: '/',
-				component: Dashboard
-			}
+				redirect: 'dashboard'
+			},
+			...dashboardRoutes,
+			...userRoutes
 		]
 	}
 ]

@@ -40,14 +40,14 @@
 
 		<md-list slot="body">
 			<md-list-item>
-				<router-link to="/dashboard">
+				<router-link to="/panel/dashboard" @click.native="close('left')">
 					<md-icon>dashboard</md-icon>
 					<span>Dashboard</span>
 				</router-link>
 			</md-list-item>
 
 			<md-list-item>
-				<router-link to="/users">
+				<router-link to="/panel/users" @click.native="close('left')">
 					<md-icon>person</md-icon> <span>Users</span>
 				</router-link>
 			</md-list-item>
@@ -92,27 +92,18 @@
 					</md-list>
 				</md-list-expand>
 			</md-list-item>
-
-			<md-list-item>
-				<md-icon>group_work</md-icon> <span>Partners</span>
-			</md-list-item>
-
-			<md-list-item>
-				<md-icon>star_rate</md-icon> <span>Volunteers</span>
-			</md-list-item>
-
-			<md-list-item class="md-warn">
-				<md-icon class="md-warn">favorite</md-icon> <span>Donations</span>
-			</md-list-item>
-		</md-list>
 	</mu-container>
 </template>
 
 <script>
+	import { mapMutations } from 'vuex';
 	import router from '../../router';
 
 	export default {
 		methods: {
+			...mapMutations({
+				close: 'sidenav/close'
+			}),
 			logout () {
 				router.push('/');
 			}
