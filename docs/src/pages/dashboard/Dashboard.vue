@@ -1,15 +1,11 @@
 <template>
 	<mu-container>
 		<md-toolbar slot="header">
-			<md-button class="md-icon-button">
+			<md-button @click.native="openSidenav('left')" class="md-icon-button">
 				<md-icon>menu</md-icon>
 			</md-button>
 
 			<h2 class="md-title" style="flex: 1">Dashboard</h2>
-
-			<md-button class="md-icon-button">
-				<md-icon>favorite</md-icon>
-			</md-button>
 		</md-toolbar>
 
 		<template slot="body">
@@ -180,8 +176,14 @@
 </template>
 
 <script>
-	export default {
+	import { mapMutations } from 'vuex';
 
+	export default {
+		methods: {
+			...mapMutations({
+				openSidenav: 'sidenav/open',
+			})
+		}
 	}
 </script>
 

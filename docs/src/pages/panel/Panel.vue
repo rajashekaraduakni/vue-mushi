@@ -1,6 +1,8 @@
 <template>
 	<mu-panel
 		ref="panel"
+		:sidenav-left="isLeftOpen"
+		@close-sidenav="closeSidenav"
 	>
 		<adm-sidenav-left
 			class="panel__sidenav panel__sidenav--left"
@@ -25,18 +27,21 @@
 
 <script>
 	import SidenavLeft from '../sidenav/SidenavLeft';
+	import { mapGetters, mapMutations } from 'vuex';
 
 	export default {
 		components: {
 			"adm-sidenav-left": SidenavLeft
 		},
+		computed: {
+			...mapGetters({
+				isLeftOpen: 'sidenav/isLeftOpen'
+			})
+		},
 		methods: {
-			openSidenav (side) {
-				this.$refs.panel.openSidenav(side);
-			},
-			closeSidenav (side) {
-				this.$refs.panel.closeSidenav(right);
-			}
+			...mapMutations({
+				closeSidenav: 'sidenav/close'
+			})
 		}
 	}
 </script>

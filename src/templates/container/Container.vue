@@ -39,7 +39,7 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			z-index: 100;
+			z-index: 5;
 		}
 	}
 </style>

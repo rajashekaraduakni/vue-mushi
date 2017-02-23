@@ -1,8 +1,11 @@
 <template>
 	<div class="panel">
 		<md-sidenav
-			class="md-left panel__sidenav panel__sidenav--left"
 			ref="sidenavLeft"
+			class="md-left panel__sidenav panel__sidenav--left"
+			:class="{'md-active': sidenavLeft}"
+			@open="openSidenav('left')"
+			@close="closeSidenav('left')"
 		>
 			<slot name="sidenav-left"></slot>
 		</md-sidenav>
@@ -22,23 +25,23 @@
 
 <script>
 	export default {
+		props: {
+			sidenavLeft: {
+				type: Boolean,
+				default: false
+			}
+		},
+		watch: {
+			sidenavLeft (value) {
+				console.log('HOLY SHIT');
+			}
+		},
 		methods: {
 			openSidenav(side) {
-				if (side == 'left') {
-					this.$refs.sidenavLeft.open();
-				} else if (side == 'right') {
-					this.$refs.sidenavRight.open();
-				}
+				this.$emit('open-sidenav', side)
 			},
 			closeSidenav(side) {
-				if (side == 'left') {
-					this.$refs.sidenavLeft.close();
-				} else if (side == 'right') {
-					this.$refs.sidenavRight.close();
-				} else if (!side) {
-					this.$refs.sidenavLeft.close();
-					this.$refs.sidenavRight.close();
-				}
+				this.$emit('close-sidenav', side);
 			}
 		}
 	}

@@ -3,9 +3,11 @@ import VueRouter from 'vue-router';
 import VueMushi from '../../src';
 import VueMaterial from 'vue-material';
 import VeeValidate from 'vee-validate';
+
 import App from './App';
 import router from './router';
 import config from './config';
+import store from './store';
 
 Vue.use(VueRouter);
 Vue.use(VueMushi);
@@ -33,5 +35,6 @@ Vue.material.setCurrentTheme('mushi');
 
 Docs = new Docs({
 	el: '#app',
-	router
+	router,
+	store
 });

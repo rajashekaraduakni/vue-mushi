@@ -1,5 +1,43 @@
 <template>
-	<mu-container>
+	<mu-container class="sidenav">
+		<md-toolbar slot="header" class="md-account-header">
+			<md-list class="md-transparent">
+				<md-list-item class="md-avatar-list">
+					<md-avatar class="md-large">
+						<img src="https://placeimg.com/64/64/people/8" alt="People">
+					</md-avatar>
+
+					<span style="flex: 1"></span>
+
+				</md-list-item>
+
+				<md-list-item>
+					<div class="md-list-text-container">
+						<span class="sidenav__user">John Doe</span>
+						<span class="sidenav__email">johndoe@email.com</span>
+					</div>
+
+					<md-menu md-direction="bottom left" md-size="4">
+						<md-button class="md-icon-button" md-menu-trigger>
+							<md-icon>arrow_drop_down</md-icon>
+						</md-button>
+
+						<md-menu-content>
+							<md-menu-item>
+								<span>Settings</span>
+								<md-icon>near_me</md-icon>
+							</md-menu-item>
+
+							<md-menu-item @click.native="logout">
+								<span>Logout</span>
+								<md-icon>phone</md-icon>
+							</md-menu-item>
+						</md-menu-content>
+					</md-menu>
+				</md-list-item>
+			</md-list>
+		</md-toolbar>
+
 		<md-list slot="body">
 			<md-list-item>
 				<router-link to="/dashboard">
@@ -65,20 +103,27 @@
 
 			<md-list-item class="md-warn">
 				<md-icon class="md-warn">favorite</md-icon> <span>Donations</span>
-
-				<span class="md-list-action">
-					<span class="sidebar__notification sidebar__notification--accent">2</span>
-				</span>
 			</md-list-item>
 		</md-list>
 	</mu-container>
 </template>
 
 <script>
+	import router from '../../router';
+
 	export default {
-	
+		methods: {
+			logout () {
+				router.push('/');
+			}
+		}
 	}
 </script>
 
-<style>
+<style lang="sass" scoped>
+	.sidenav{
+		&__email{
+			color: hsla(0, 0%, 100%, .54);
+		}
+	}
 </style>
