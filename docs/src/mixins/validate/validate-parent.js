@@ -10,26 +10,40 @@ export default {
 			});
 		})
 	},
+	data () {
+		return {
+			errorCount: 0
+		}
+	},
 	methods: {
-		submit (success, error) {
+		submit (success) {
+			this.errorCount = 0;
+
+			// Subscribe to child's error-changed event
+			this.$bus.on('errors-changed', () => {
+				// Increments error count if there are errors
+				if (this.errors.errors.length > 0) {
+					this.errorCount++;
+				}
+			})
+
 			// Validates all child components
 			this.validate();
 
-			// Callback after error validation is done
-			this.$bus.once('errors-changed', () => {
-				if (this.errors.errors.length > 0) {
-					if (error)
-						error(this.errors.errors);
-				} else {
+			// Check errors count for every child
+			// FIXME: Not the best solution
+			setTimeout(() => {
+				if (this.errorCount == 0) {
+					// Callback after error validation is done
 					success();
 				}
-			})
+
+				// Unsubscribes from child's error-changed event
+				this.$bus.off('error-changed');
+			}, 100);
 		},
 		validate () {
 			this.$bus.emit('validate');
 		}
-	},
-	beforeDestroy () {
-		this.$bus.off('errors-changed');
 	}
 }
