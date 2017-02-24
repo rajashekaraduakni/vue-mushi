@@ -53,7 +53,10 @@
 			user: {
 				type: Object,
 				default: () => {
-					return { email: '', name: '' }
+					return {
+						name: '',
+						email: ''
+					}
 				}
 			}
 		},

@@ -1,11 +1,11 @@
 <template>
 	<mu-container>
 		<md-toolbar slot="header" class="dashboard__header">
-			<md-button @click.native="openSidenav('left')" class="md-icon-button">
+			<md-button href="/#/panel/users" class="md-icon-button">
 				<md-icon>arrow_back</md-icon>
 			</md-button>
 
-			<h2 class="md-title" style="flex: 1">Add User</h2>
+			<h2 class="md-title" style="flex: 1">{{ (action == 'add') ? 'Add' : 'Edit' }} User</h2>
 
 			<md-button @click.native="submit(success)" class="md-icon-button">
 				<md-icon>check</md-icon>
@@ -22,7 +22,7 @@
 					md-flex-small="100"
 					md-flex="66"
 				>
-					<adm-user-fieldset>
+					<adm-user-fieldset :user="user">
 					</adm-user-fieldset>
 				</md-layout>
 
@@ -53,8 +53,30 @@
 		mixins: [validateParent],
 		data () {
 			return {
-				user: users.data[0],
-				password: ''
+				user: {
+					name: '',
+					email: ''
+				},
+				password: '',
+				action: 'add'
+			}
+		},
+		beforeRouteEnter(to, from, next) {
+			// Get the user if router has id parameter
+			if (to.params.id) {
+				setTimeout(() => {
+					users.data.forEach(user => {
+						if (user.id == to.params.id) {
+							next(vm => {
+								vm.user = user;
+								vm.action = 'edit';
+							});
+						}
+					});
+				}, 100);
+			// Otherwise continue
+			} else {
+				next();
 			}
 		},
 		methods: {
