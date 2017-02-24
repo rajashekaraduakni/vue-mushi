@@ -16,8 +16,6 @@
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
-					<adm-appointment-widget>
-					</adm-appointment-widget>
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">

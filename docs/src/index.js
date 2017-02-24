@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import VueMushi from '../../src';
 import VueMaterial from 'vue-material';
 import VeeValidate from 'vee-validate';
+import VueBus from 'vue-bus';
 
 import App from './App';
 import router from './router';
@@ -13,6 +14,7 @@ Vue.use(VueRouter);
 Vue.use(VueMushi);
 Vue.use(VueMaterial);
 Vue.use(VeeValidate);
+Vue.use(VueBus);
 
 let Docs = Vue.component('app', App);
 //
