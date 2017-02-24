@@ -45,7 +45,10 @@
 </template>
 
 <script>
+	import { validateChild } from '../../../mixins/validate';
+
 	export default {
+		mixins: [validateChild],
 		props: {
 			user: {
 				type: Object,
@@ -54,20 +57,6 @@
 				}
 			}
 		},
-		created () {
-			this.$bus.on('validate', this.onValidate);
-			this.$watch(() => this.errors.errors, (value) => {
-				this.$bus.emit('errors-changed', value);
-			});
-		},
-		methods: {
-			onValidate () {
-				this.$validator.validateAll()
-			}
-		},
-		beforeDestroy () {
-			this.$bus.off('validate', this.onValidate);
-		}
 	}
 </script>
 

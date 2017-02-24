@@ -7,7 +7,7 @@
 
 			<h2 class="md-title" style="flex: 1">Add User</h2>
 
-			<md-button @click.native="submit" class="md-icon-button">
+			<md-button @click.native="submit(success)" class="md-icon-button">
 				<md-icon>check</md-icon>
 			</md-button>
 		</md-toolbar>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-	import { mapMutations } from 'vuex';
+	import { validateParent } from '../../../mixins/validate';
 	import router from '../../../router';
 	import users from '../mock';
 	import UserFieldset from '../user-fieldset/UserFieldset';
@@ -50,37 +50,17 @@
 			'adm-user-fieldset': UserFieldset,
 			'adm-user-fieldset-password': UserFieldsetPassword
 		},
+		mixins: [validateParent],
 		data () {
 			return {
 				user: users.data[0],
 				password: ''
 			}
 		},
-		created () {
-			this.$bus.on('errors-changed', (errors) => {
-				this.errors.clear();
-				errors.forEach(e => {
-					this.errors.add(e.field, e.msg, e.rule, e.scope);
-				});
-			})
-		},
 		methods: {
-			...mapMutations({
-				openSidenav: 'sidenav/open',
-			}),
-			submit () {
-				this.validate();
-				this.$bus.once('errors-changed', () => {
-					if (this.errors.errors.length == 0)
-						router.push('/panel/users')
-				})
-			},
-			validate () {
-				this.$bus.emit('validate');
+			success () {
+				router.push('/panel/users');
 			}
-		},
-		beforeDestroy () {
-			this.$bus.off('errors-changed');
 		}
 	}
 </script>
