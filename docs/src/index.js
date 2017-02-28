@@ -17,7 +17,7 @@ Vue.use(VeeValidate);
 Vue.use(VueBus);
 
 let Docs = Vue.component('app', App);
-//
+
 // Register Vue Material theme
 Vue.material.registerTheme({
 	'mushi': {

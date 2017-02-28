@@ -16,6 +16,7 @@
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
+					<md-button @click.native="error">Make Error</md-button>
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
@@ -36,7 +37,17 @@ export default {
 	methods: {
 		...mapMutations({
 			openSidenav: 'sidenav/open',
-		})
+		}),
+		error () {
+			this.$store.commit('logger/error', {
+				text: 'Holy moly, it`s an error',
+				timeout: 4000,
+				action: 'Dismiss',
+				callback: function () {
+					console.log('Callback test');
+				}
+			})
+		}
 	}
 }
 </script>

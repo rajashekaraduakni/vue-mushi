@@ -13,6 +13,7 @@
 				v-for="user in users"
 				:user="user"
 				@click="editUser"
+				@delete="deleteUser"
 			>
 			</adm-user-list-item>
 		</md-list>
@@ -46,6 +47,12 @@
 			}),
 			editUser (user) {
 				router.push('/panel/users/edit/' + user.id);
+			},
+			deleteUser (user) {
+				let index = this.users.indexOf(user);
+
+				if (index != -1)
+					this.users.splice(index, 1);
 			}
 		}
 	}
