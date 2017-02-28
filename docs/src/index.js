@@ -30,7 +30,23 @@ Vue.material.registerTheme({
 			hue: 800
 		},
 		warn: 'red'
+	},
+	'mushi-green': {
+		primary: 'green',
+		accent: 'orange',
+		warn: 'red'
+	},
+	'mushi-red': {
+		primary: 'red',
+		accent: 'orange',
+		warn: 'red'
+	},
+	'mushi-gold': {
+		primary: 'orange',
+		accent: 'orange',
+		warn: 'red'
 	}
+
 });
 
 Vue.material.setCurrentTheme('mushi');

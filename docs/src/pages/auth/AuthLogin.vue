@@ -81,6 +81,10 @@
 							return;
 						}
 
+						this.$store.commit('mushi/logger/success', {
+							text: 'Logged in successfully!',
+							action: 'Dismiss'
+						});
 						router.push('/panel');
 					})
 			}

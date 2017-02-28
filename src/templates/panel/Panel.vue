@@ -20,8 +20,6 @@
 		>
 			<slot name="sidenav-right"></slot>
 		</md-sidenav>
-
-		<mu-snackbar></mu-snackbar>
 	</mu-panel>
 </template>
 

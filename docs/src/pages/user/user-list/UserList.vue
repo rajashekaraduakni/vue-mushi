@@ -49,10 +49,19 @@
 				router.push('/panel/users/edit/' + user.id);
 			},
 			deleteUser (user) {
-				let index = this.users.indexOf(user);
+				let index = this.users.indexOf(user),
+					vm = this;
 
-				if (index != -1)
+				if (index != -1) {
 					this.users.splice(index, 1);
+					this.$store.commit('mushi/logger/success', {
+						text: 'User ' + user.name + ' deleted successfully!',
+						action: 'Undo',
+						callback () {
+							vm.users.unshift(user);
+						}
+					})
+				}
 			}
 		}
 	}

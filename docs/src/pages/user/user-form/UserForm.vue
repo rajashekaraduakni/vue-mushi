@@ -81,6 +81,10 @@
 		},
 		methods: {
 			success () {
+				this.$store.commit('mushi/logger/success', {
+					text: 'User ' + this.user.name + ' ' + (this.action == 'add' ? 'created' : 'edited') + ' successfully!',
+					action: 'Dismiss'
+				});
 				router.push('/panel/users');
 			}
 		}

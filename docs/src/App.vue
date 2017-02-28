@@ -1,7 +1,10 @@
 <template>
-	<transition name="scale-fade">
-		<router-view></router-view>
-	</transition>
+	<div class="app">
+		<transition name="scale-fade">
+			<router-view></router-view>
+		</transition>
+		<mu-snackbar></mu-snackbar>
+	</div>
 </template>
 
 <script>
@@ -13,7 +16,7 @@
 <style lang="sass">
 	@import "~vue-material/dist/vue-material.css";
 
-	body {
+	body, .app {
 		height: 100%;
 	}
 

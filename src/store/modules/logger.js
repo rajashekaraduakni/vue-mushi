@@ -1,14 +1,25 @@
 export default {
 	namespaced: true,
 	state: {
+		active: null,
 		messages: []
 	},
 	getters: {
+		getActive (state) {
+			return state.active;
+		},
 		getMessages (state) {
 			return state.messages;
 		}
 	},
 	mutations: {
+		setActive (state, payload) {
+			state.active = payload.message;
+
+			if (payload.message != null) {
+				payload.snackbar.open();
+			}
+		},
 		info (state, payload) {
 			state.messages.unshift({
 				text: payload.text,

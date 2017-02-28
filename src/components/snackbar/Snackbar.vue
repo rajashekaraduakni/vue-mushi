@@ -2,7 +2,7 @@
 	<md-snackbar
 		md-position="bottom center"
 		ref="snackbar"
-		:md-duration="4000"
+		:md-duration="(active) ? active.timeout : 4000"
 		@close="removeMessage(active)"
 	>
 		<span v-if="active">
@@ -10,7 +10,13 @@
 		</span>
 
 		<md-button v-if="active"
-			class="md-accent"
+			class="md-primary"
+			:md-theme="
+				(active.type == 'info') ? 'mushi' :
+				(active.type == 'success') ? 'mushi-green' :
+				(active.type == 'error') ? 'mushi-red' :
+				(active.type == 'warn') ? 'mushi-gold' : ''
+			"
 			@click.native="onConfirm(active)"
 		>
 			{{ active.action }}
@@ -19,17 +25,17 @@
 </template>
 
 <script>
-	import { mapGetters } from 'vuex';
+	import { mapGetters, mapMutations } from 'vuex';
 
 	export default {
 		data () {
 			return {
-				active: null,
 				queue: []
 			}
 		},
 		computed: {
 			...mapGetters({
+				active: 'mushi/logger/getActive',
 				messages: 'mushi/logger/getMessages'
 			})
 		},
@@ -39,18 +45,17 @@
 			}
 		},
 		methods: {
-			setActive (message) {
-				this.active = message;
-
-				if (message != null) {
-					this.$refs.snackbar.open();
-				}
-			},
+			...mapMutations({
+				setActive: 'mushi/logger/setActive'
+			}),
 			addMessage (message) {
 				this.queue.unshift(message);
 
 				if (this.active == null)
-					this.setActive(message);
+					this.setActive({
+						snackbar: this.$refs.snackbar,
+						message: message
+					});
 			},
 			removeMessage (message) {
 				var index = this.queue.indexOf(message);
@@ -58,14 +63,17 @@
 				if (index != -1)
 					this.queue.splice(index, 1);
 
-				this.setActive(null);
-
-				if (this.queue.length > 0) {
-					// Wait message hide
-					setTimeout(() => {
-						this.setActive(this.queue[0]);
-					}, 1000);
-				}
+				setTimeout(() => {
+					if (this.queue.length > 0) {
+						// Wait message hide
+						this.setActive({
+							snackbar: this.$refs.snackbar,
+							message: this.queue[0]
+						});
+					} else {
+						this.setActive({ message: null });
+					}
+				}, 1000);
 			},
 			onConfirm (message) {
 				this.$refs.snackbar.close()

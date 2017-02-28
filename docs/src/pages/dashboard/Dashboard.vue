@@ -13,7 +13,6 @@
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
 					<adm-appointment-widget>
 					</adm-appointment-widget>
-					<md-button @click.native="error">Make Error</md-button>
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
@@ -21,7 +20,6 @@
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
-					<mu-thumbnail></mu-thumbnail>
 				</md-layout>
 			</md-layout>
 		</div>
