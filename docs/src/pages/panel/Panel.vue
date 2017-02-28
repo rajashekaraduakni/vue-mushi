@@ -15,7 +15,6 @@
 			slot="container"
 		>
 			<router-view></router-view>
-			<adm-panel-logger ref="logger"></adm-panel-logger>
 		</template>
 
 		<template
@@ -28,13 +27,11 @@
 
 <script>
 	import { mapGetters, mapMutations } from 'vuex';
-	import PanelLogger from './PanelLogger';
 	import SidenavLeft from '../sidenav/SidenavLeft';
 
 	export default {
 		components: {
 			'adm-sidenav-left': SidenavLeft,
-			'adm-panel-logger': PanelLogger
 		},
 		computed: {
 			...mapGetters({

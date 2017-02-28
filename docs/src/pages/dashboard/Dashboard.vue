@@ -13,13 +13,15 @@
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
 					<adm-appointment-widget>
 					</adm-appointment-widget>
-				</md-layout>
-
-				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
 					<md-button @click.native="error">Make Error</md-button>
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
+					<mu-thumbnail></mu-thumbnail>
+				</md-layout>
+
+				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
+					<mu-thumbnail></mu-thumbnail>
 				</md-layout>
 			</md-layout>
 		</div>
@@ -39,7 +41,7 @@ export default {
 			openSidenav: 'sidenav/open',
 		}),
 		error () {
-			this.$store.commit('logger/error', {
+			this.$store.commit('mushi/logger/error', {
 				text: 'Holy moly, it`s an error',
 				timeout: 4000,
 				action: 'Dismiss',

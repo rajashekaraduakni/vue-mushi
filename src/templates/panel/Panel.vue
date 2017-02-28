@@ -20,6 +20,8 @@
 		>
 			<slot name="sidenav-right"></slot>
 		</md-sidenav>
+
+		<mu-snackbar></mu-snackbar>
 	</mu-panel>
 </template>
 
@@ -33,7 +35,6 @@
 		},
 		watch: {
 			sidenavLeft (value) {
-				console.log('HOLY SHIT');
 			}
 		},
 		methods: {

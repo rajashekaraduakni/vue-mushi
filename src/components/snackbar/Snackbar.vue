@@ -30,7 +30,7 @@
 		},
 		computed: {
 			...mapGetters({
-				messages: 'logger/getMessages'
+				messages: 'mushi/logger/getMessages'
 			})
 		},
 		watch: {
