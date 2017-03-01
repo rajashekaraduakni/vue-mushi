@@ -1,25 +1,25 @@
 <template>
-	<div class="gallery--single">
+	<div class="gallery">
 		<span class="gallery__title md-subheading">
 			{{ title }}
 		</span>
 
 		<md-whiteframe class="gallery__whiteframe" md-elevation="2">
-			<mu-gallery-thumbnail
+			<mu-thumbnail
 				@click="openDialog"
 			>
 				<md-button
 					class="md-fab md-mini md-warn md-fab-top-right"
-					@click.stop="deleteThumbnail"
+					@click.native.stop="deleteThumbnail"
 				>
 					<md-icon>delete</md-icon>
 				</md-button>
-			</mu-gallery-thumbnail>
+			</mu-thumbnail>
 		</md-whiteframe>
 
 		<md-button
 			class="gallery__action gallery__action--set md-button md-raised md-primary"
-			@click="openDialog"
+			@click.native="openDialog"
 		>
 			Set {{ title }}
 		</md-button>
@@ -28,7 +28,7 @@
 			ref="dialog"
 			:limit="1"
 		>
-			<slot name="sidebar">
+			<slot name="sidenav">
 			</slot>
 		</mu-gallery-dialog>
 	</div>
@@ -62,22 +62,19 @@
 </script>
 
 <style lang="sass" scoped>
-	.gallery--single{
-		width: 100%;
-		.gallery{
-			&__title{
-				display: block;
-				margin-bottom: 10px;
-			}
-			&__action{
-				&--set{
-					margin: 20px 0;
-					display: block;
-				}
-			}
-			&__whiteframe{
+	.gallery{
+		&__title{
+			display: block;
+			margin-bottom: 10px;
+		}
+		&__action{
+			&--set{
+				margin: 20px 0;
 				display: block;
 			}
+		}
+		&__whiteframe{
+			display: block;
 		}
 	}
 </style>

@@ -1,7 +1,7 @@
 <template>
 	<!-- Gallery Dialog -->
 	<md-dialog
-		class="gallery--dialog"
+		class="gallery gallery--dialog"
 		:class="{
 			'is-active': active
 		}"
@@ -9,28 +9,36 @@
 	>
 		<md-dialog-content>
 			<div class="gallery__grid">
-				<mu-gallery-thumbnail
-					class="gallery__item"
+				<md-layout
 					v-for="photo in photos"
-					:active="active == photo"
-					:checked="checked.indexOf(photo) != -1"
-					@click="setActive(photo); addChecked(photo)"
+					md-flex-xsmall="50"
+					md-flex-small="33"
+					md-flex-medium="25"
+					md-flex-large="25"
+					md-flex-xlarge="20"
 				>
-
-					<!-- Remove button -->
-					<md-button
-						class="gallery__uncheck md-fab md-fab-top-right md-warn md-mini"
-						v-if="checked.indexOf(photo) != -1"
-						@click.stop="removeChecked(photo)"
+					<mu-thumbnail
+						class="gallery__item"
+						:active="active == photo"
+						:checked="checked.indexOf(photo) != -1"
+						@click="setActive(photo); addChecked(photo)"
 					>
-						<md-icon>close</md-icon>
-					</md-button>
 
-				</mu-gallery-thumbnail>
+						<!-- Remove button -->
+						<md-button
+							class="gallery__uncheck md-fab md-fab-top-right md-warn md-mini"
+							v-if="checked.indexOf(photo) != -1"
+							@click.native.stop="removeChecked(photo)"
+						>
+							<md-icon>close</md-icon>
+						</md-button>
+
+					</mu-thumbnail>
+				</md-layout>
 			</div>
 		</md-dialog-content>
 
-		<div class="gallery__sidebar">
+		<div class="gallery__sidenav">
 			<slot>
 			</slot>
 		</div>
@@ -53,7 +61,7 @@
 				<!-- Cancel -->
 				<md-button
 					class="md-warn"
-					@click="close"
+					@click.native="close"
 				>
 					Cancel
 				</md-button>
@@ -61,7 +69,7 @@
 				<!-- Accept -->
 				<md-button
 					class="md-primary"
-					@click="close"
+					@click.native="close"
 				>
 					Accept
 				</md-button>
@@ -148,37 +156,34 @@
 </script>
 
 <style lang="sass" scoped>
-	.gallery--dialog{
-		.gallery{
-			&__grid{
-				display: flex;
-				flex-flow: row wrap;
-				padding: 1px;
-			}
-			&__item{
-				padding: 1px;
-			}
-			&__sidebar{
-				width: 304px;
-				position: absolute;
-				top: 0;
-				right: -304px;
-				bottom: 52px;
-				height: auto;
-				background: #ebebeb;
-				transition: all .4s cubic-bezier(.25,.8,.25,1);
-			}
-			&__add{
-				bottom: 27px;
-			}
-			&__limit{
-				flex: 1;
-			}
+	.gallery{
+		&__grid{
+			display: flex;
+			flex-flow: row wrap;
+			padding: 1px;
 		}
-
+		&__item{
+			padding: 1px;
+		}
+		&__sidenav{
+			width: 304px;
+			position: absolute;
+			top: 0;
+			right: -304px;
+			bottom: 52px;
+			height: auto;
+			background: #ebebeb;
+			transition: all .4s cubic-bezier(.25,.8,.25,1);
+		}
+		&__add{
+			bottom: 32px !important;
+		}
+		&__limit{
+			flex: 1;
+		}
 		&.is-active{
 			.gallery{
-				&__sidebar{
+				&__sidenav{
 					right: 0;
 				}
 			}
@@ -189,7 +194,16 @@
 	}
 
 	.md-dialog-content{
-		padding: 0;
+		padding: 0 !important;
 		transition: all .4s cubic-bezier(.25,.8,.25,1);
+	}
+</style>
+
+<style lang="sass">
+	.gallery--dialog{
+		.md-dialog{
+			width: 100%;
+			height: 100%;
+		}
 	}
 </style>

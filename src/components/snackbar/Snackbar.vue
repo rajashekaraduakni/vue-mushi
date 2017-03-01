@@ -58,7 +58,7 @@
 					});
 			},
 			removeMessage (message) {
-				var index = this.queue.indexOf(message);
+				let index = this.queue.indexOf(message);
 
 				if (index != -1)
 					this.queue.splice(index, 1);

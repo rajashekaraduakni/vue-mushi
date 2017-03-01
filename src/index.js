@@ -31,8 +31,11 @@ import Auth from './templates/auth/Auth';
 import AuthForm from './templates/auth/AuthForm';
 import Panel from './templates/panel/Panel';
 import Container from './templates/container/Container';
+
 import Snackbar from './components/snackbar/Snackbar';
 import Thumbnail from './components/thumbnail/Thumbnail';
+import GallerySingle from './components/gallery/GallerySingle';
+import GalleryDialog from './components/gallery/GalleryDialog';
 
 export default function (Vue, options) {
 /*
@@ -68,6 +71,9 @@ export default function (Vue, options) {
 	Vue.component('mu-auth-form', AuthForm);
 	Vue.component('mu-panel', Panel);
 	Vue.component('mu-container', Container);
+
 	Vue.component('mu-snackbar', Snackbar);
 	Vue.component('mu-thumbnail', Thumbnail);
+	Vue.component('mu-gallery-single', GallerySingle);
+	Vue.component('mu-gallery-dialog', GalleryDialog);
 }

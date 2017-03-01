@@ -27,9 +27,14 @@
 				</md-layout>
 
 				<md-layout
+					class="user__aside"
 					md-flex-small="100"
 					md-flex="33"
 				>
+					<mu-gallery-single>
+						<div slot="sidenav">WOW</div>
+					</mu-gallery-single>
+
 					<adm-user-fieldset-password :password="password">
 					</adm-user-fieldset-password>
 				</md-layout>
@@ -95,6 +100,9 @@
 	.user{
 		&__form{
 			padding: 16px;
+		}
+		&__aside{
+			flex-flow: column;
 		}
 	}
 </style>

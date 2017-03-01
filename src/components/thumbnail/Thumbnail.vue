@@ -1,51 +1,48 @@
 <template>
-	<md-layout
-		class="thumbnail"
+	<md-card
+		class="thumbnail card-ripple"
 		:class="{
 			'is-active': active,
 			'is-checked': checked,
 			'is-uploading': uploading
 		}"
 		@click.native="onClick"
+
 	>
-		<md-card
-			class="thumbnail__card card-ripple"
-		>
-			<md-card-media class="thumbnail__photo">
-				<md-ink-ripple></md-ink-ripple>
+		<md-card-media class="thumbnail__photo">
+			<md-ink-ripple></md-ink-ripple>
 
-				<!-- The thumbnail -->
-				<img :src="url" class="thumbnail__thumbnail" alt="People">
+			<!-- The thumbnail -->
+			<img :src="url" class="thumbnail__thumbnail" alt="People">
 
-				<transition name="fade">
-					<!-- Overlay -->
-					<span
-						class="thumbnail__overlay"
-						v-if="checked || active"
-					>
-						<!-- Checked icon -->
-						<span class="thumbnail__check">
-							<md-icon class="md-size-2x">check</md-icon>
-						</span>
-					</span>
-				</transition>
-
-				<!-- Upload progress bar -->
-				<md-spinner
-					class="thumbnail__spinner"
-					v-if="uploading"
-					:md-progress="progress"
-					:md-indeterminate="uploading && progress == 0"
-					:md-size="75"
-					:md-stroke="5"
+			<transition name="fade">
+				<!-- Overlay -->
+				<span
+					class="thumbnail__overlay"
+					v-if="checked || active"
 				>
-				</md-spinner>
+					<!-- Checked icon -->
+					<span class="thumbnail__check">
+						<md-icon class="md-size-2x">check</md-icon>
+					</span>
+				</span>
+			</transition>
 
-				<!-- Slot -->
-				<slot></slot>
-			</md-card-media>
-		</md-card>
-	</md-layout>
+			<!-- Upload progress bar -->
+			<md-spinner
+				class="thumbnail__spinner"
+				v-if="uploading"
+				:md-progress="progress"
+				:md-indeterminate="uploading && progress == 0"
+				:md-size="75"
+				:md-stroke="5"
+			>
+			</md-spinner>
+
+			<!-- Slot -->
+			<slot></slot>
+		</md-card-media>
+	</md-card>
 </template>
 
 <script>
@@ -86,59 +83,55 @@
 
 <style lang="sass" scoped>
 	.thumbnail{
-		.thumbnail{
-			&__card{
-				cursor: pointer;
-				border-radius: 0;
-				box-shadow: none;
-				flex: 1;
+		cursor: pointer;
+		border-radius: 0;
+		box-shadow: none;
+		flex: 1;
+		&__photo{
+			overflow: hidden;
+			position: relative;
+			&:after{
+				content: "";
+				display: block;
+				padding-top: 100%;
 			}
-			&__photo{
-				overflow: hidden;
-				position: relative;
-				&:after{
-					content: "";
-					display: block;
-					padding-top: 100%;
-				}
-			}
-			&__check{
-				width: 70px;
-				height: 70px;
-				border-radius: 70px;
-				color: white;
-				text-align: center;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				display: flex;
-				z-index: 10;
-				transition: background-color .15s ease-out;
-			}
-			&__overlay{
-				position: absolute;
-				border: 8px solid transparent;
-				top: 5px;
-				bottom: 5px;
-				right: 5px;
-				left: 5px;
-			}
-			&__thumbnail{
-				position: absolute;
-				width: 100%;
-				min-height: 100%;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
-			&__spinner{
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				z-index: 5;
-			}
+		}
+		&__check{
+			width: 70px;
+			height: 70px;
+			border-radius: 70px;
+			color: white;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			z-index: 10;
+			transition: background-color .15s ease-out;
+		}
+		&__overlay{
+			position: absolute;
+			border: 8px solid transparent;
+			top: 5px;
+			bottom: 5px;
+			right: 5px;
+			left: 5px;
+		}
+		&__thumbnail{
+			position: absolute;
+			width: 100%;
+			min-height: 100%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&__spinner{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 5;
 		}
 		&.is-checked,
 		&.is-active{
