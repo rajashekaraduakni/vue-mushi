@@ -54,8 +54,8 @@
 			openDialog () {
 				this.$refs.dialog.open();
 			},
-			closeSidebar () {
-				this.$refs.dialog.closeSidebar();
+			closeSidenav () {
+				this.$refs.dialog.closeSidenav();
 			}
 		}
 	}

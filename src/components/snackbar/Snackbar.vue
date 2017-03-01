@@ -73,7 +73,7 @@
 					} else {
 						this.setActive({ message: null });
 					}
-				}, 1000);
+				}, 400);
 			},
 			onConfirm (message) {
 				this.$refs.snackbar.close()

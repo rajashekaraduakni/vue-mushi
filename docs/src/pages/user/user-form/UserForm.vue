@@ -19,11 +19,15 @@
 		>
 			<md-layout md-gutter="16">
 				<md-layout
+					class="user__main"
 					md-flex-small="100"
 					md-flex="66"
 				>
 					<adm-user-fieldset :user="user">
 					</adm-user-fieldset>
+
+					<adm-user-fieldset-password>
+					</adm-user-fieldset-password>
 				</md-layout>
 
 				<md-layout
@@ -31,12 +35,8 @@
 					md-flex-small="100"
 					md-flex="33"
 				>
-					<mu-gallery-single>
-						<div slot="sidenav">WOW</div>
-					</mu-gallery-single>
-
-					<adm-user-fieldset-password :password="password">
-					</adm-user-fieldset-password>
+					<adm-user-fieldset-avatar>
+					</adm-user-fieldset-avatar>
 				</md-layout>
 			</md-layout>
 		</form>
@@ -49,11 +49,13 @@
 	import users from '../mock';
 	import UserFieldset from '../user-fieldset/UserFieldset';
 	import UserFieldsetPassword from '../user-fieldset/UserFieldsetPassword';
+	import UserFieldsetAvatar from '../user-fieldset/UserFieldsetAvatar';
 
 	export default {
 		components: {
 			'adm-user-fieldset': UserFieldset,
-			'adm-user-fieldset-password': UserFieldsetPassword
+			'adm-user-fieldset-password': UserFieldsetPassword,
+			'adm-user-fieldset-avatar': UserFieldsetAvatar
 		},
 		mixins: [validateParent],
 		data () {
@@ -101,8 +103,9 @@
 		&__form{
 			padding: 16px;
 		}
+		&__main,
 		&__aside{
-			flex-flow: column;
+			flex-flow: column wrap;
 		}
 	}
 </style>

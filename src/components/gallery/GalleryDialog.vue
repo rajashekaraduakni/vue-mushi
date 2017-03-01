@@ -146,9 +146,9 @@
 					this.checked.splice(index, 1);
 
 				if (this.active == photo)
-					this.closeSidebar();
+					this.closeSidenav();
 			},
-			closeSidebar (event) {
+			closeSidenav (event) {
 				this.setActive(null);
 			}
 		}

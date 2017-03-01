@@ -34,7 +34,8 @@
 		display: flex;
 		flex-flow: column;
 		&__header{
-		
+			position: relative;
+			z-index: 3;
 		}
 		&__body{
 			flex: 1 100%;

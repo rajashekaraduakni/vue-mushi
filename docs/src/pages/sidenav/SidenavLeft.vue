@@ -105,6 +105,7 @@
 				close: 'sidenav/close'
 			}),
 			logout () {
+				this.close('left');
 				router.push('/');
 			}
 		}
