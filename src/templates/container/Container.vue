@@ -1,5 +1,7 @@
 <template>
-	<div class="container">
+	<div class="container"
+		:class="{'sidenav-is-open': sidenav}"
+	>
 		<header class="container__header">
 			<md-whiteframe md-elevation="1">
 				<slot name="header"></slot>
@@ -10,7 +12,13 @@
 			<slot name="body"></slot>
 		</section>
 
-		<footer class="container__footer" :class="{'logger-is-active': active}">
+		<sidebar class="container__sidenav">
+			<md-whiteframe class="container__sidenav-frame" md-elevation="1">
+				<slot name="sidenav"></slot>
+			</md-whiteframe>
+		</sidebar>
+
+		<footer class="container__footer" :class="{'logger-is-active': logger}">
 			<slot name="footer"></slot>
 		</footer>
 	</div>
@@ -22,8 +30,21 @@
 	export default {
 		computed: {
 			...mapGetters({
-				active: 'mushi/logger/getActive'
+				logger: 'mushi/logger/getActive'
 			})
+		},
+		data () {
+			return {
+				sidenav: false
+			}
+		},
+		methods: {
+			openSidenav () {
+				this.sidenav = true;
+			},
+			closeSidenav () {
+				this.sidenav = false;
+			}
 		}
 	}
 </script>
@@ -33,6 +54,7 @@
 		height: 100%;
 		display: flex;
 		flex-flow: column;
+		transition: margin .4s cubic-bezier(.25,.8,.25,1);
 		&__header{
 			position: relative;
 			z-index: 3;
@@ -41,15 +63,50 @@
 			flex: 1 100%;
 			overflow-y: auto;
 		}
+		&__sidenav{
+			width: 304px;
+			position: absolute;
+			top: 0;
+			right: -304px;
+			bottom: 52px;
+			height: 100%;
+			z-index: 3;
+			background: #ebebeb;
+			transition: all .4s cubic-bezier(.25,.8,.25,1);
+			.container__sidenav{
+				display: none !important;
+			}
+		}
+		&__sidenav-frame{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			visibility: hidden;
+		}
 		&__footer{
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			right: 0;
 			z-index: 5;
-			transition: bottom .4s cubic-bezier(.25, .8, .25, 1);
+			transition: all .4s cubic-bezier(.25,.8,.25,1);
 			&.logger-is-active{
 				bottom: 50px;
+			}
+		}
+		&.sidenav-is-open{
+			margin-right: 304px;
+			.container{
+				&__sidenav{
+					right: 0;
+				}
+				&__sidenav-frame{
+					visibility: visible;
+				}
+				&__footer{
+					right: 304px
+				}
 			}
 		}
 	}

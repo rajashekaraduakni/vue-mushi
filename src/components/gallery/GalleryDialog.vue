@@ -8,7 +8,7 @@
 		ref="dialog"
 	>
 		<md-dialog-content>
-			<div class="gallery__grid">
+			<div class="gallery__grid gallery--grid">
 				<md-layout
 					v-for="photo in photos"
 					md-flex-xsmall="50"

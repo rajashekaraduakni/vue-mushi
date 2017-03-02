@@ -18,6 +18,14 @@
 			</adm-user-list-item>
 		</md-list>
 
+		<mu-container slot="sidenav">
+			<md-toolbar slot="header">
+				<md-button class="md-icon-button">
+					<md-icon>menu</md-icon>
+				</md-button>
+			</md-toolbar>
+		</mu-container>
+
 		<div slot="footer" class="dashboard__footer">
 			<md-button href="/#/panel/users/add" class="md-fab md-fab-bottom-right">
 				<md-icon>add</md-icon>
