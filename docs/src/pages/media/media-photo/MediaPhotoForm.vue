@@ -1,6 +1,6 @@
 <template>
 	<mu-container class="media">
-		<md-toolbar slot="header">
+		<md-toolbar slot="header" md-theme="mushi-darker">
 			<md-button class="md-icon-button" @click.native="onClose">
 				<md-icon>close</md-icon>
 			</md-button>

@@ -1,6 +1,7 @@
 import Panel from './Panel';
 import dashboardRoutes from '../dashboard/routes';
 import userRoutes from '../user/routes';
+import mediaRoutes from '../media/routes';
 
 export default [
 	{
@@ -12,7 +13,8 @@ export default [
 				redirect: 'dashboard'
 			},
 			...dashboardRoutes,
-			...userRoutes
+			...userRoutes,
+			...mediaRoutes
 		]
 	}
 ]

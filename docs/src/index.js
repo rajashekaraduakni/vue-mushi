@@ -31,6 +31,20 @@ Vue.material.registerTheme({
 		},
 		warn: 'red'
 	},
+	'mushi-darker': {
+		primary: {
+			color: 'light-blue',
+			hue: 600
+		},
+		accent: {
+			color: 'orange',
+			hue: 800
+		},
+		warn: {
+			color: 'red',
+			hue: 700
+		}
+	},
 	'mushi-green': {
 		primary: 'green',
 		accent: 'orange',

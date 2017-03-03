@@ -36,6 +36,7 @@ import Snackbar from './components/snackbar/Snackbar';
 import Thumbnail from './components/thumbnail/Thumbnail';
 import GallerySingle from './components/gallery/GallerySingle';
 import GalleryDialog from './components/gallery/GalleryDialog';
+import GalleryGrid from './components/gallery/GalleryGrid';
 
 export default function (Vue, options) {
 /*
@@ -76,4 +77,5 @@ export default function (Vue, options) {
 	Vue.component('mu-thumbnail', Thumbnail);
 	Vue.component('mu-gallery-single', GallerySingle);
 	Vue.component('mu-gallery-dialog', GalleryDialog);
+	Vue.component('mu-gallery-grid', GalleryGrid);
 }

@@ -54,6 +54,9 @@
 			openDialog () {
 				this.$refs.dialog.open();
 			},
+			openSidenav () {
+				this.$refs.dialog.openSidenav();
+			},
 			closeSidenav () {
 				this.$refs.dialog.closeSidenav();
 			}

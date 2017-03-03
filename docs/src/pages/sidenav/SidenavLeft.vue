@@ -79,13 +79,13 @@
 				<md-list-expand>
 					<md-list>
 						<md-list-item class="md-inset">
-							<router-link to="/media/photos">
+							<router-link to="/panel/media/photos" @click.native="close('left')">
 								Photos
 							</router-link>
 						</md-list-item>
 
 						<md-list-item class="md-inset">
-							<router-link to="/media/files">
+							<router-link to="/panel/media/files" @click.native="close('left')">
 								Files
 							</router-link>
 						</md-list-item>

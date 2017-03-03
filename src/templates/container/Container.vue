@@ -12,11 +12,11 @@
 			<slot name="body"></slot>
 		</section>
 
-		<sidebar class="container__sidenav">
+		<aside class="container__sidenav">
 			<md-whiteframe class="container__sidenav-frame" md-elevation="1">
 				<slot name="sidenav"></slot>
 			</md-whiteframe>
-		</sidebar>
+		</aside>
 
 		<footer class="container__footer" :class="{'logger-is-active': logger}">
 			<slot name="footer"></slot>
@@ -54,7 +54,7 @@
 		height: 100%;
 		display: flex;
 		flex-flow: column;
-		transition: margin .4s cubic-bezier(.25,.8,.25,1);
+		transition: padding .4s cubic-bezier(.25,.8,.25,1);
 		&__header{
 			position: relative;
 			z-index: 3;
@@ -96,7 +96,7 @@
 			}
 		}
 		&.sidenav-is-open{
-			margin-right: 304px;
+			padding-right: 304px;
 			.container{
 				&__sidenav{
 					right: 0;
