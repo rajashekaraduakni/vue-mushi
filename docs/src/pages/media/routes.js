@@ -1,4 +1,5 @@
 import MediaPhotoList from './media-photo/MediaPhotoList';
+import MediaFileList from './media-file/MediaFileList';
 
 export default [
 	{
@@ -8,5 +9,9 @@ export default [
 	{
 		path: 'media/photos',
 		component: MediaPhotoList
+	},
+	{
+		path: 'media/files',
+		component: MediaFileList
 	}
 ]
