@@ -73,7 +73,7 @@
 			</md-list-item>
 
 			<md-list-item>
-				<router-link to="/pages">
+				<router-link to="/panel/pages" @click.native="close('left')">
 					<md-icon>insert_drive_file</md-icon> <span>Pages</span>
 				</router-link>
 			</md-list-item>

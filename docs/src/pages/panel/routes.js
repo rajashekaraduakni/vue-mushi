@@ -4,6 +4,7 @@ import userRoutes from '../user/routes';
 import mediaRoutes from '../media/routes';
 import postRoutes from '../post/routes';
 import categoryRoutes from '../category/routes';
+import pageRoutes from '../page/routes';
 
 export default [
 	{
@@ -18,7 +19,8 @@ export default [
 			...userRoutes,
 			...mediaRoutes,
 			...postRoutes,
-			...categoryRoutes
+			...categoryRoutes,
+			...pageRoutes
 		]
 	}
 ]
