@@ -20,8 +20,8 @@
 				</md-layout>
 
 				<md-layout class="post__aside" md-flex-small="100" md-flex="33">
-					<adm-category-fieldset>
-					</adm-category-fieldset>
+					<adm-post-fieldset-category>
+					</adm-post-fieldset-category>
 
 					<mu-gallery-single ref="thumbnail">
 						<adm-media-photo-form
@@ -43,14 +43,14 @@
 	import router from '../../router';
 	import posts from './mock';
 	import PostFieldset from './PostFieldset';
-	import CategoryFieldset from '../category/CategoryFieldset';
+	import PostFieldsetCategory from './PostFieldsetCategory';
 	import MediaPhotoForm from '../media/media-photo/MediaPhotoForm';
 
 	export default {
 		mixins: [validateParent],
 		components: {
 			'adm-post-fieldset': PostFieldset,
-			'adm-category-fieldset': CategoryFieldset,
+			'adm-post-fieldset-category': PostFieldsetCategory,
 			'adm-media-photo-form': MediaPhotoForm
 		},
 		data () {
@@ -59,7 +59,7 @@
 				post: {
 					title: '',
 					slug: '',
-					description: '',
+					description: {},
 					excerpt: '',
 					thumbnail: ''
 				}

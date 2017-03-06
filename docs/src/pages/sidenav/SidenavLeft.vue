@@ -62,7 +62,12 @@
 								Posts
 							</router-link>
 						</md-list-item>
-						<md-list-item class="md-inset">Categories</md-list-item>
+
+						<md-list-item class="md-inset">
+							<router-link to="/panel/categories" @click.native="close('left')">
+								Categories
+							</router-link>
+						</md-list-item>
 					</md-list>
 				</md-list-expand>
 			</md-list-item>

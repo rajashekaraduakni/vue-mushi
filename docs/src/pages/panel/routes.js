@@ -3,6 +3,7 @@ import dashboardRoutes from '../dashboard/routes';
 import userRoutes from '../user/routes';
 import mediaRoutes from '../media/routes';
 import postRoutes from '../post/routes';
+import categoryRoutes from '../category/routes';
 
 export default [
 	{
@@ -16,7 +17,8 @@ export default [
 			...dashboardRoutes,
 			...userRoutes,
 			...mediaRoutes,
-			...postRoutes
+			...postRoutes,
+			...categoryRoutes
 		]
 	}
 ]

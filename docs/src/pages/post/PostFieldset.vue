@@ -102,7 +102,7 @@
 					return {
 						title: '',
 						slug: '',
-						description: '',
+						description: {},
 						excerpt: '',
 						thumbnail: ''
 					}
