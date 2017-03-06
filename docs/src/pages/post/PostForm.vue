@@ -20,6 +20,9 @@
 				</md-layout>
 
 				<md-layout class="post__aside" md-flex-small="100" md-flex="33">
+					<adm-category-fieldset>
+					</adm-category-fieldset>
+
 					<mu-gallery-single ref="thumbnail">
 						<adm-media-photo-form
 							slot="sidenav"
@@ -40,12 +43,14 @@
 	import router from '../../router';
 	import posts from './mock';
 	import PostFieldset from './PostFieldset';
+	import CategoryFieldset from '../category/CategoryFieldset';
 	import MediaPhotoForm from '../media/media-photo/MediaPhotoForm';
 
 	export default {
 		mixins: [validateParent],
 		components: {
 			'adm-post-fieldset': PostFieldset,
+			'adm-category-fieldset': CategoryFieldset,
 			'adm-media-photo-form': MediaPhotoForm
 		},
 		data () {
