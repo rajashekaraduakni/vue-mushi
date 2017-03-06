@@ -2,6 +2,7 @@ import Panel from './Panel';
 import dashboardRoutes from '../dashboard/routes';
 import userRoutes from '../user/routes';
 import mediaRoutes from '../media/routes';
+import postRoutes from '../post/routes';
 
 export default [
 	{
@@ -14,7 +15,8 @@ export default [
 			},
 			...dashboardRoutes,
 			...userRoutes,
-			...mediaRoutes
+			...mediaRoutes,
+			...postRoutes
 		]
 	}
 ]

@@ -16,7 +16,6 @@
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">
-					<mu-thumbnail></mu-thumbnail>
 				</md-layout>
 
 				<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33">

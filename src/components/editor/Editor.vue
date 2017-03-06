@@ -79,3 +79,9 @@
 		}
 	}
 </style>
+
+<style lang="sass">
+	.ql-editor{
+		min-height: 200px;
+	}
+</style>

@@ -37,6 +37,7 @@ import Thumbnail from './components/thumbnail/Thumbnail';
 import GallerySingle from './components/gallery/GallerySingle';
 import GalleryDialog from './components/gallery/GalleryDialog';
 import GalleryGrid from './components/gallery/GalleryGrid';
+import Editor from './components/editor/Editor';
 
 export default function (Vue, options) {
 /*
@@ -78,4 +79,5 @@ export default function (Vue, options) {
 	Vue.component('mu-gallery-single', GallerySingle);
 	Vue.component('mu-gallery-dialog', GalleryDialog);
 	Vue.component('mu-gallery-grid', GalleryGrid);
+	Vue.component('mu-editor', Editor);
 }

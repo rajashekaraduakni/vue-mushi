@@ -1,6 +1,6 @@
 <template>
 	<mu-container>
-		<md-toolbar slot="header" class="dashboard__header">
+		<md-toolbar slot="header">
 			<md-button href="/#/panel/users" class="md-icon-button">
 				<md-icon>arrow_back</md-icon>
 			</md-button>
