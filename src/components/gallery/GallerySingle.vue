@@ -1,0 +1,83 @@
+<template>
+	<div class="gallery">
+		<span class="gallery__title md-subheading">
+			{{ title }}
+		</span>
+
+		<md-whiteframe class="gallery__whiteframe" md-elevation="2">
+			<mu-thumbnail
+				@click="openDialog"
+			>
+				<md-button
+					class="md-fab md-mini md-warn md-fab-top-right"
+					@click.native.stop="deleteThumbnail"
+				>
+					<md-icon>delete</md-icon>
+				</md-button>
+			</mu-thumbnail>
+		</md-whiteframe>
+
+		<md-button
+			class="gallery__action gallery__action--set md-button md-raised md-primary"
+			@click.native="openDialog"
+		>
+			Set {{ title }}
+		</md-button>
+
+		<mu-gallery-dialog
+			ref="dialog"
+			:limit="1"
+		>
+			<slot name="sidenav">
+			</slot>
+		</mu-gallery-dialog>
+	</div>
+</template>
+
+<script>
+
+	export default {
+		props: {
+			value: {
+				type: Object,
+				default: () => {}
+			},
+			title: {
+				type: String,
+				default: 'Thumbnail'
+			}
+		},
+		methods: {
+			deleteThumbnail () {
+			
+			},
+			openDialog () {
+				this.$refs.dialog.open();
+			},
+			openSidenav () {
+				this.$refs.dialog.openSidenav();
+			},
+			closeSidenav () {
+				this.$refs.dialog.closeSidenav();
+			}
+		}
+	}
+</script>
+
+<style lang="sass" scoped>
+	.gallery{
+		&__title{
+			display: block;
+			margin-bottom: 10px;
+		}
+		&__action{
+			&--set{
+				margin: 20px 0;
+				display: block;
+			}
+		}
+		&__whiteframe{
+			display: block;
+		}
+	}
+</style>
