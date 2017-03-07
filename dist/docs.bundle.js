@@ -14461,6 +14461,9 @@ exports.default = {
 					}
 				});
 			}
+		},
+		add: function add() {
+			_router2.default.push('/panel/categories/add');
 		}
 	})
 };
@@ -15740,6 +15743,9 @@ exports.default = {
 					}
 				});
 			}
+		},
+		add: function add() {
+			_router2.default.push('/panel/pages/add');
 		}
 	})
 };
@@ -16256,6 +16262,9 @@ exports.default = {
 					}
 				});
 			}
+		},
+		add: function add() {
+			_router2.default.push('/panel/posts/add');
 		}
 	})
 };
@@ -16804,6 +16813,9 @@ exports.default = {
 					}
 				});
 			}
+		},
+		add: function add() {
+			_router2.default.push('/panel/users/add');
 		}
 	})
 };
@@ -19578,7 +19590,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -19606,7 +19618,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -19620,7 +19632,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -19732,7 +19744,7 @@ exports = module.exports = __webpack_require__(0)();
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -33295,8 +33307,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "footer"
   }, [_c('md-button', {
     staticClass: "md-fab md-fab-bottom-right",
-    attrs: {
-      "href": "/#/panel/posts/add"
+    nativeOn: {
+      "click": function($event) {
+        _vm.add($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("add")])], 1)], 1)], 2)
 },staticRenderFns: []}
@@ -33373,8 +33387,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "footer"
   }, [_c('md-button', {
     staticClass: "md-fab md-fab-bottom-right",
-    attrs: {
-      "href": "/#/panel/pages/add"
+    nativeOn: {
+      "click": function($event) {
+        _vm.add($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("add")])], 1)], 1)], 1)
 },staticRenderFns: []}
@@ -33423,8 +33439,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "footer"
   }, [_c('md-button', {
     staticClass: "md-fab md-fab-bottom-right",
-    attrs: {
-      "href": "/#/panel/users/add"
+    nativeOn: {
+      "click": function($event) {
+        _vm.add($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("add")])], 1)], 1)], 1)
 },staticRenderFns: []}
@@ -34221,8 +34239,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "footer"
   }, [_c('md-button', {
     staticClass: "md-fab md-fab-bottom-right",
-    attrs: {
-      "href": "/#/panel/categories/add"
+    nativeOn: {
+      "click": function($event) {
+        _vm.add($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("add")])], 1)], 1)], 1)
 },staticRenderFns: []}
