@@ -13,7 +13,7 @@
 			<md-ink-ripple></md-ink-ripple>
 
 			<!-- The thumbnail -->
-			<img :src="url" class="thumbnail__thumbnail" alt="People">
+			<img :src="src" class="thumbnail__thumbnail" alt="People">
 
 			<transition name="fade">
 				<!-- Overlay -->
@@ -53,7 +53,7 @@
 				type: Boolean,
 				default: false
 			},
-			url: {
+			src: {
 				type: String,
 				default: 'http://lorempixel.com/400/400/'
 			},

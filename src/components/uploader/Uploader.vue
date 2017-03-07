@@ -65,10 +65,13 @@
 				// Upload active file
 				this.$store.dispatch(this.action, {
 					form,
+					file: this.active.file,
 					progress: this.progress
 				})
 				.then(response => {
-					this.done(response);
+					this.done({
+						preview: this.active.preview
+					});
 				})
 			},
 

@@ -1,5 +1,24 @@
 <template>
 	<div class="gallery gallery--grid">
+		<!-- Queue -->
+		<md-layout
+			v-for="file in queue"
+			md-flex-xsmall="50"
+			md-flex-small="33"
+			md-flex-medium="25"
+			md-flex-large="25"
+			md-flex-xlarge="20"
+		>
+			<mu-thumbnail
+				class="media__item"
+				:src="file.preview"
+				:progress="file.progress"
+				uploading
+			>
+			</mu-thumbnail>
+		</md-layout>
+
+		<!-- Loop -->
 		<md-layout
 			v-for="image in images"
 			md-flex-xsmall="50"
@@ -10,6 +29,7 @@
 		>
 			<mu-thumbnail
 				class="gallery__item"
+				:src="image.src"
 				:active="active == image"
 				:checked="checked.indexOf(image) != -1"
 				@click="setActive(image); addChecked(image)"
@@ -38,7 +58,11 @@
 			},
 			images: {
 				type: Array,
-				default: []
+				default: () => []
+			},
+			queue: {
+				type: Array,
+				default: () => []
 			}
 		},
 		data () {

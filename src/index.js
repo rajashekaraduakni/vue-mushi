@@ -38,31 +38,10 @@ import GallerySingle from './components/gallery/GallerySingle';
 import GalleryDialog from './components/gallery/GalleryDialog';
 import GalleryGrid from './components/gallery/GalleryGrid';
 import Editor from './components/editor/Editor';
+import Uploader from './components/uploader/Uploader';
 
 export default function (Vue, options) {
 /*
-	// Inputs
-	Vue.component('mu-input-text', InputTextComponent); // mu-text is better?
-	Vue.component('mu-input-textarea', InputTextareaComponent); // mu-textarea is better?
-	Vue.component('mu-select', SelectComponent);
-	Vue.component('mu-checkbox', CheckboxComponent);
-	Vue.component('mu-editor', EditorComponent);
-
-	// Miscellaneous
-	Vue.component('mu-snackbar', SnackbarComponent);
-	Vue.component('mu-uploader', UploaderComponent);
-
-	// Gallery
-	Vue.component('mu-gallery-thumbnail', GalleryThumbnailComponent);
-	Vue.component('mu-gallery-single', GallerySingleComponent);
-	Vue.component('mu-gallery-multiple', GalleryMultipleComponent);
-	Vue.component('mu-gallery-dialog', GalleryDialogComponent);
-
-	// Templates
-	Vue.component('mu-list-template', ListTemplate);
-	Vue.component('mu-form-template', FormTemplate);
-	Vue.component('mu-sidebar-template', SidebarTemplate);
-
 	// Directives
 	Vue.directive('mu-load-more', LoadMoreDirective);
 
@@ -80,4 +59,5 @@ export default function (Vue, options) {
 	Vue.component('mu-gallery-dialog', GalleryDialog);
 	Vue.component('mu-gallery-grid', GalleryGrid);
 	Vue.component('mu-editor', Editor);
+	Vue.component('mu-uploader', Uploader);
 }

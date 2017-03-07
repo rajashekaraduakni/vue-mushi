@@ -29,18 +29,30 @@
 					</md-menu-item>
 				</md-menu-content>
 			</md-menu>
+
+			<!-- Uploader -->
+			<mu-uploader
+				ref="uploader"
+				action="resource/upload"
+				:queue="queue"
+				@done="onDone"
+			>
+			</mu-uploader>
 		</md-toolbar>
 
-		<mu-gallery-grid
-			v-if="view == 'grid'"
-			ref="grid"
-			slot="body"
-			:limit="1"
-			:images="images"
-			@check="onCheck"
-			@uncheck="onUncheck"
-		>
-		</mu-gallery-grid>
+		<div v-if="view == 'grid'" slot="body">
+			<mu-gallery-grid
+				v-if="view == 'grid'"
+				ref="grid"
+				slot="body"
+				:limit="1"
+				:images="images"
+				:queue="queue"
+				@check="onCheck"
+				@uncheck="onUncheck"
+			>
+			</mu-gallery-grid>
+		</div>
 
 		<md-list
 			v-if="view == 'list'"
@@ -63,6 +75,7 @@
 		<template slot="footer">
 			<md-button
 				class="gallery__add md-fab md-fab-bottom-right"
+				@click.native="$refs.uploader.select()"
 			>
 				<md-icon>add</md-icon>
 			</md-button>
@@ -84,6 +97,7 @@
 		data () {
 			return {
 				view: 'grid',
+				queue: [],
 				images: [
 					{ url: '1' },
 					{ url: '2' },
@@ -130,6 +144,9 @@
 				if (this.view == 'grid')
 					this.$refs.grid.setActive(null);
 				this.$refs.container.closeSidenav();
+			},
+			onDone (event) {
+				this.images.unshift({ src: event.preview });
 			}
 		}
 	}

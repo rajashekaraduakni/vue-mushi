@@ -23,6 +23,7 @@
 
 				<template slot="footer">
 					<md-button
+						@click.native="$emit('add')"
 						class="gallery__add md-fab md-mini md-fab-bottom-right"
 					>
 						<md-icon>add</md-icon>

@@ -18,19 +18,19 @@
 					</div>
 
 					<md-menu md-direction="bottom left" md-size="4">
-						<md-button class="md-icon-button" md-menu-trigger>
+						<md-button class="sidenav__more md-icon-button" md-menu-trigger>
 							<md-icon>arrow_drop_down</md-icon>
 						</md-button>
 
 						<md-menu-content>
 							<md-menu-item>
 								<span>Settings</span>
-								<md-icon>near_me</md-icon>
+								<md-icon>settings</md-icon>
 							</md-menu-item>
 
 							<md-menu-item @click.native="logout">
 								<span>Logout</span>
-								<md-icon>phone</md-icon>
+								<md-icon>power_settings_new</md-icon>
 							</md-menu-item>
 						</md-menu-content>
 					</md-menu>
@@ -123,8 +123,12 @@
 
 <style lang="sass" scoped>
 	.sidenav{
-		&__email{
+		&__email,
+		&__more .md-icon{
 			color: hsla(0, 0%, 100%, .54);
+		}
+		&__more{
+			margin-right: 0;
 		}
 	}
 </style>
