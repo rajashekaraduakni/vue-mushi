@@ -1,37 +1,12 @@
 import path from 'path';
+import merge from 'webpack-merge';
+import baseWebpackConfig from './base';
 
-const resolvePath = (dir) => {
-	return path.resolve(__dirname, '..', '..', dir);
-};
-
-export default {
-	entry: {
-		docs: './docs/src/index.js'
-	},
+export default merge(baseWebpackConfig, {
 	output: {
 		path: './dist',
 		publicPath: '',
 		filename: '[name].js',
 		chunkFilename: '[name].js'
-	},
-	module: {
-		rules: [
-			{
-				test: /\.scss$/,
-				use: [
-					"style-loader",
-					"css-loader",
-					"sass-loader"
-				]
-			},
-			{
-				test: /\.js$/,
-				loader: 'babel-loader',
-				exclude: 'node_modules',
-				include: [
-					resolvePath('docs')
-				]
-			},
-		]
 	}
-};
+});
