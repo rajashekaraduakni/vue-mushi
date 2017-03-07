@@ -2,6 +2,10 @@
 	<mu-auth-form
 		@submit="validateBeforeSubmit"
 	>
+		<h2 slot="header" class="auth__title md-title">
+			Forgot Password
+		</h2>
+
 		<template slot="form">
 			<!-- Email Input -->
 			<md-input-container
@@ -75,6 +79,9 @@
 			display: block;
 			font-size: 12px;
 			margin-top: 15px;
+		}
+		&__title{
+			width: 100%;
 		}
 	}
 

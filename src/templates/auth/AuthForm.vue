@@ -5,8 +5,8 @@
 			<md-whiteframe md-elevation="1"> 
 				<md-toolbar class="auth__header">
 					<slot name="header">
-						<md-avatar class="md-large">
-							<img src="assets/images/abstract-shape.jpg" alt="Brand">
+						<md-avatar class="md-large md-avatar-icon">
+							<md-icon>fingerprint</md-icon>
 						</md-avatar>
 					</slot>
 				</md-toolbar>
