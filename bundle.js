@@ -1255,7 +1255,6 @@ var routes = [{
 }].concat(_toConsumableArray(_routes2.default), _toConsumableArray(_routes4.default));
 
 exports.default = new _vueRouter2.default({
-	mode: 'hash',
 	base: window.location.pathname,
 	routes: routes
 });
@@ -14283,6 +14282,9 @@ exports.default = {
 				text: 'Category ' + this.category.title + ' ' + (this.action == 'add' ? 'created' : 'edited') + ' successfully!',
 				action: 'Dismiss'
 			});
+			this.previous();
+		},
+		previous: function previous() {
 			_router2.default.push('/panel/categories');
 		}
 	}
@@ -15559,6 +15561,9 @@ exports.default = {
 				text: 'Page ' + this.page.title + ' ' + (this.action == 'add' ? 'created' : 'edited') + ' successfully!',
 				action: 'Dismiss'
 			});
+			this.previous();
+		},
+		previous: function previous() {
 			_router2.default.push('/panel/pages');
 		}
 	}
@@ -16070,6 +16075,9 @@ exports.default = {
 				text: 'Post ' + this.post.title + ' ' + (this.action == 'add' ? 'created' : 'edited') + ' successfully!',
 				action: 'Dismiss'
 			});
+			this.previous();
+		},
+		previous: function previous() {
 			_router2.default.push('/panel/posts');
 		}
 	}
@@ -16702,6 +16710,9 @@ exports.default = {
 				text: 'User ' + this.user.name + ' ' + (this.action == 'add' ? 'created' : 'edited') + ' successfully!',
 				action: 'Dismiss'
 			});
+			this.previous();
+		},
+		previous: function previous() {
 			_router2.default.push('/panel/users');
 		}
 	}
@@ -33176,8 +33187,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "header"
   }, [_c('md-button', {
     staticClass: "md-icon-button",
-    attrs: {
-      "href": "/#/panel/categories"
+    nativeOn: {
+      "click": function($event) {
+        _vm.previous($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("arrow_back")])], 1), _vm._v(" "), _c('h2', {
     staticClass: "md-title",
@@ -33998,7 +34011,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('mu-auth', {
     attrs: {
-      "background": "/assets/images/abstract-shape.jpg"
+      "background": "assets/images/abstract-shape.jpg"
     }
   }, [_c('transition', {
     attrs: {
@@ -34679,8 +34692,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "header"
   }, [_c('md-button', {
     staticClass: "md-icon-button",
-    attrs: {
-      "href": "/#/panel/posts"
+    nativeOn: {
+      "click": function($event) {
+        _vm.previous($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("arrow_back")])], 1), _vm._v(" "), _c('h2', {
     staticClass: "md-title",
@@ -34914,7 +34929,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('img', {
     attrs: {
-      "src": "/assets/images/abstract-shape.jpg",
+      "src": "assets/images/abstract-shape.jpg",
       "alt": "Coffee House"
     }
   })]), _vm._v(" "), _c('md-card-header', [_c('h2', {
@@ -35316,8 +35331,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "header"
   }, [_c('md-button', {
     staticClass: "md-icon-button",
-    attrs: {
-      "href": "/#/panel/pages"
+    nativeOn: {
+      "click": function($event) {
+        _vm.previous($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("arrow_back")])], 1), _vm._v(" "), _c('h2', {
     staticClass: "md-title",
@@ -35536,8 +35553,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     slot: "header"
   }, [_c('md-button', {
     staticClass: "md-icon-button",
-    attrs: {
-      "href": "/#/panel/users"
+    nativeOn: {
+      "click": function($event) {
+        _vm.previous($event)
+      }
     }
   }, [_c('md-icon', [_vm._v("arrow_back")])], 1), _vm._v(" "), _c('h2', {
     staticClass: "md-title",
