@@ -19,7 +19,7 @@
 		</md-list>
 
 		<template slot="footer">
-			<md-button href="/#/panel/posts/add" class="md-fab md-fab-bottom-right">
+			<md-button @click.native="add" class="md-fab md-fab-bottom-right">
 				<md-icon>add</md-icon>
 			</md-button>
 		</template>
@@ -62,6 +62,9 @@
 						}
 					})
 				}
+			},
+			add () {
+				router.push('/panel/posts/add');
 			}
 		}
 	}

@@ -19,7 +19,7 @@
 		</md-list>
 
 		<div slot="footer" class="dashboard__footer">
-			<md-button href="/#/panel/categories/add" class="md-fab md-fab-bottom-right">
+			<md-button @click.native="add" class="md-fab md-fab-bottom-right">
 				<md-icon>add</md-icon>
 			</md-button>
 		</div>
@@ -62,6 +62,9 @@
 						}
 					})
 				}
+			},
+			add () {
+				router.push('/panel/categories/add');
 			}
 		}
 	}
