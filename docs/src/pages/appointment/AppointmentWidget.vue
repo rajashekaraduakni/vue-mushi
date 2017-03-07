@@ -2,7 +2,7 @@
 	<md-card class="card-example" md-with-hover>
 		<md-card-area md-inset>
 			<md-card-media md-ratio="16:9">
-				<img src="/assets/images/abstract-shape.jpg" alt="Coffee House">
+				<img src="assets/images/abstract-shape.jpg" alt="Coffee House">
 			</md-card-media>
 
 			<md-card-header>

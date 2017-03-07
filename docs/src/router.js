@@ -12,7 +12,6 @@ let routes = [
 ]
 
 export default new VueRouter({
-	mode: 'hash',
 	base: window.location.pathname,
 	routes
 });

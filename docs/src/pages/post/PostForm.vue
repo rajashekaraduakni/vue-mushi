@@ -1,7 +1,7 @@
 <template>
 	<mu-container>
 		<md-toolbar slot="header">
-			<md-button href="/#/panel/posts" class="md-icon-button">
+			<md-button @click.native="previous" class="md-icon-button">
 				<md-icon>arrow_back</md-icon>
 			</md-button>
 
@@ -87,6 +87,9 @@
 					text: 'Post ' + this.post.title + ' ' + (this.action == 'add' ? 'created' : 'edited') + ' successfully!',
 					action: 'Dismiss'
 				});
+				this.previous();
+			},
+			previous () {
 				router.push('/panel/posts');
 			}
 		}

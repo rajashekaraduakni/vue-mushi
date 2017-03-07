@@ -1,6 +1,6 @@
 <template>
 	<mu-auth
-		background="/assets/images/abstract-shape.jpg"
+		background="assets/images/abstract-shape.jpg"
 	>
 		<transition name="scale-fade">
 			<router-view></router-view>

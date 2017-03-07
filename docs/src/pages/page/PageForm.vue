@@ -1,7 +1,7 @@
 <template>
 	<mu-container>
 		<md-toolbar slot="header">
-			<md-button href="/#/panel/pages" class="md-icon-button">
+			<md-button @click.native="previous" class="md-icon-button">
 				<md-icon>arrow_back</md-icon>
 			</md-button>
 
@@ -101,6 +101,9 @@
 					text: 'Page ' + this.page.title + ' ' + (this.action == 'add' ? 'created' : 'edited') + ' successfully!',
 					action: 'Dismiss'
 				});
+				this.previous()
+			},
+			previous () {
 				router.push('/panel/pages');
 			}
 		}
