@@ -6,11 +6,11 @@
 
 		<md-whiteframe class="gallery__whiteframe" md-elevation="2">
 			<mu-thumbnail
-				@click="openDialog"
+				@click="onSelect"
 			>
 				<md-button
 					class="md-fab md-mini md-warn md-fab-top-right"
-					@click.native.stop="deleteThumbnail"
+					@click.native.stop="onDelete"
 				>
 					<md-icon>delete</md-icon>
 				</md-button>
@@ -19,18 +19,12 @@
 
 		<md-button
 			class="gallery__action gallery__action--set md-button md-raised md-primary"
-			@click.native="openDialog"
+			@click.native="onSelect"
 		>
 			Set {{ title }}
 		</md-button>
 
-		<mu-gallery-dialog
-			ref="dialog"
-			:limit="1"
-		>
-			<slot name="sidenav">
-			</slot>
-		</mu-gallery-dialog>
+		<slot></slot>
 	</div>
 </template>
 
@@ -48,17 +42,11 @@
 			}
 		},
 		methods: {
-			deleteThumbnail () {
-			
+			onSelect () {
+				this.$emit('select');
 			},
-			openDialog () {
-				this.$refs.dialog.open();
-			},
-			openSidenav () {
-				this.$refs.dialog.openSidenav();
-			},
-			closeSidenav () {
-				this.$refs.dialog.closeSidenav();
+			onDelete () {
+				this.$emit('delete');
 			}
 		}
 	}

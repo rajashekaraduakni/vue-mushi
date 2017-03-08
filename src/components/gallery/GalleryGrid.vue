@@ -13,7 +13,7 @@
 				class="media__item"
 				:src="file.preview"
 				:progress="file.progress"
-				uploading
+				:uploading="true"
 			>
 			</mu-thumbnail>
 		</md-layout>
@@ -74,6 +74,7 @@
 		methods: {
 			setActive (image) {
 				this.active = image;
+				this.$emit('select', this.active);
 			},
 			addChecked (image) {
 				// Search image in checked list
@@ -90,7 +91,7 @@
 				if (index == -1)
 					this.checked.push(image);
 
-				this.$emit('check', this.checked.length);
+				this.$emit('change', this.checked.length);
 			},
 			removeChecked (image) {
 				let index = this.checked.indexOf(image);
@@ -98,7 +99,7 @@
 				if (index != -1)
 					this.checked.splice(index, 1);
 
-				this.$emit('uncheck', this.checked.length);
+				this.$emit('change', this.checked.length);
 
 				if (image == this.active)
 					this.setActive(null);

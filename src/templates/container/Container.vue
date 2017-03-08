@@ -2,22 +2,29 @@
 	<div class="container"
 		:class="{'sidenav-is-open': sidenav}"
 	>
+		<!-- Header Slot -->
 		<header class="container__header">
 			<md-whiteframe md-elevation="1">
 				<slot name="header"></slot>
 			</md-whiteframe>
 		</header>
 
+		<!-- Default Slot -->
+		<slot></slot>
+
+		<!-- Body Slot -->
 		<section class="container__body">
 			<slot name="body"></slot>
 		</section>
 
+		<!-- Sidenav Slot -->
 		<aside class="container__sidenav">
 			<md-whiteframe class="container__sidenav-frame" md-elevation="1">
 				<slot name="sidenav"></slot>
 			</md-whiteframe>
 		</aside>
 
+		<!-- Footer Slot -->
 		<footer class="container__footer" :class="{'logger-is-active': logger}">
 			<slot name="footer"></slot>
 		</footer>
