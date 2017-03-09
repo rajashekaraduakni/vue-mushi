@@ -5,10 +5,14 @@
 				<md-icon>menu</md-icon>
 			</md-button>
 
-			<h2 class="md-title" style="flex: 1">Media – Photos</h2>
+			<h2 class="md-title" style="flex: 1">Photos</h2>
 
 			<md-button class="md-icon-button">
 				<md-icon>search</md-icon>
+			</md-button>
+
+			<md-button class="md-icon-button">
+				<md-icon>filter_list</md-icon>
 			</md-button>
 
 			<md-menu md-align-trigger md-direction="bottom left" md-size="4">
@@ -29,16 +33,16 @@
 					</md-menu-item>
 				</md-menu-content>
 			</md-menu>
-
-			<!-- Uploader -->
-			<mu-uploader
-				ref="uploader"
-				action="resource/upload"
-				:queue="queue"
-				@done="onDone"
-			>
-			</mu-uploader>
 		</md-toolbar>
+
+		<!-- Uploader -->
+		<mu-uploader
+			ref="uploader"
+			action="resource/upload"
+			:queue="queue"
+			@done="onUploaderDone"
+		>
+		</mu-uploader>
 
 		<div v-if="view == 'grid'" slot="body">
 			<mu-gallery-grid
@@ -48,8 +52,7 @@
 				:limit="1"
 				:images="images"
 				:queue="queue"
-				@check="onCheck"
-				@uncheck="onUncheck"
+				@select="onGridSelect"
 			>
 			</mu-gallery-grid>
 		</div>
@@ -60,22 +63,22 @@
 		>
 			<adm-media-photo-item
 				v-for="image in images"
-				@click="onCheck"
+				@click="onGridSelect"
 			>
 			</adm-media-photo-item>
 		</md-list>
 
 		<adm-media-photo-form
 			slot="sidenav"
-			@close="closeSidenav"
-			@confirm="closeSidenav"
+			@close="onSidenavClose"
+			@confirm="onSidenavConfirm"
 		>
 		</adm-media-photo-form>
 
 		<template slot="footer">
 			<md-button
 				class="gallery__add md-fab md-fab-bottom-right"
-				@click.native="$refs.uploader.select()"
+				@click.native="upload"
 			>
 				<md-icon>add</md-icon>
 			</md-button>
@@ -129,23 +132,33 @@
 			setView (view) {
 				this.view = view;
 			},
-			onCheck (length) {
-				this.openSidenav();
-				this.selected = length;
-			},
-			onUncheck (length) {
-				this.closeSidenav();
-				this.selected = length;
-			},
-			openSidenav () {
-				this.$refs.container.openSidenav();
-			},
-			closeSidenav () {
+
+			// Sidenav listeners
+			onSidenavConfirm (event) {
+				this.$store.commit('mushi/logger/success', {
+					text: 'Media edited successfully!',
+					action: 'Dismiss'
+				})
+
 				if (this.view == 'grid')
 					this.$refs.grid.setActive(null);
-				this.$refs.container.closeSidenav();
 			},
-			onDone (event) {
+			onSidenavClose (event) {
+				if (this.view == 'grid')
+					this.$refs.grid.setActive(null);
+			},
+
+			// Grid listeners
+			onGridSelect (active) {
+				if (active) {
+					this.$refs.container.openSidenav();
+				} else {
+					this.$refs.container.closeSidenav();
+				}
+			},
+
+			// Uploader listeners
+			onUploaderDone (event) {
 				this.images.unshift({ src: event.preview });
 			}
 		}

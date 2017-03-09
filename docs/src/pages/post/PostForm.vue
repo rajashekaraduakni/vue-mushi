@@ -23,14 +23,8 @@
 					<adm-post-fieldset-category>
 					</adm-post-fieldset-category>
 
-					<mu-gallery-single ref="thumbnail">
-						<adm-media-photo-form
-							slot="sidenav"
-							@close="$refs.thumbnail.closeSidenav()"
-							@confirm="$refs.thumbnail.closeSidenav()"
-						>
-						</adm-media-photo-form>
-					</mu-gallery-single>
+					<adm-post-fieldset-thumbnail>
+					</adm-post-fieldset-thumbnail>
 				</md-layout>
 			</md-layout>
 		</form>
@@ -44,14 +38,14 @@
 	import posts from './mock';
 	import PostFieldset from './PostFieldset';
 	import PostFieldsetCategory from './PostFieldsetCategory';
-	import MediaPhotoForm from '../media/media-photo/MediaPhotoForm';
+	import PostFieldsetThumbnail from './PostFieldsetThumbnail';
 
 	export default {
 		mixins: [validateParent],
 		components: {
 			'adm-post-fieldset': PostFieldset,
 			'adm-post-fieldset-category': PostFieldsetCategory,
-			'adm-media-photo-form': MediaPhotoForm
+			'adm-post-fieldset-thumbnail': PostFieldsetThumbnail
 		},
 		data () {
 			return {

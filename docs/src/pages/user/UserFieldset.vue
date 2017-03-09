@@ -45,7 +45,7 @@
 </template>
 
 <script>
-	import { validateChild } from '../../../mixins/validate';
+	import { validateChild } from '../../mixins/validate';
 
 	export default {
 		mixins: [validateChild],

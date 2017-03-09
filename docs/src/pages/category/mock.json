@@ -9,6 +9,26 @@
 			"id": 2,
 			"title": "Entertainment",
 			"slug": "entertainment"
+		},
+		{
+			"id": 3,
+			"title": "Sport",
+			"slug": "sport"
+		},
+		{
+			"id": 4,
+			"title": "Health",
+			"slug": "health"
+		},
+		{
+			"id": 5,
+			"title": "Education",
+			"slug": "education"
+		},
+		{
+			"id": 6,
+			"title": "Gaming",
+			"slug": "gaming"
 		}
 	]
 }

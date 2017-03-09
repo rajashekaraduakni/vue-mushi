@@ -47,7 +47,8 @@
 		bottom: 0;
 		z-index: 20;
 		&__container{
-			min-width: 350px;
+			width: 350px;
+			max-width: 100%;
 			border-radius: 4px;
 			position: absolute;
 			top: 50%;

@@ -2,7 +2,10 @@
 	<md-layout md-gutter="16">
 		<md-layout md-flex="100" class="md-subheading">Change Password</md-layout>
 
-		<md-layout md-flex="50">
+		<md-layout
+			md-flex="50"
+			md-flex-small="100"
+		>
 			<!-- Password -->
 			<md-input-container
 				:class="{'md-input-invalid': errors.has('password')}"
@@ -25,7 +28,10 @@
 			</md-input-container>
 		</md-layout>
 
-		<md-layout md-flex="50">
+		<md-layout
+			md-flex="50"
+			md-flex-small="100"
+		>
 			<!-- Password -->
 			<md-input-container
 				:class="{'md-input-invalid': errors.has('confirm')}"
@@ -52,7 +58,7 @@
 </template>
 
 <script>
-	import { validateChild } from '../../../mixins/validate';
+	import { validateChild } from '../../mixins/validate';
 
 	export default {
 		mixins: [validateChild],

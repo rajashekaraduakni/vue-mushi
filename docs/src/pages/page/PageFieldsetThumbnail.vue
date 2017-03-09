@@ -1,7 +1,6 @@
 <template>
 	<mu-gallery-single
 		ref="gallery"
-		title="Avatar"
 		@select="$refs.dialog.open()"
 	>
 		<adm-media-photo-dialog
@@ -15,7 +14,7 @@
 </template>
 
 <script>
-	import MediaPhotoDialog from '../../media/media-photo/MediaPhotoDialog';
+	import MediaPhotoDialog from '../media/media-photo/MediaPhotoDialog';
 
 	export default {
 		components: {

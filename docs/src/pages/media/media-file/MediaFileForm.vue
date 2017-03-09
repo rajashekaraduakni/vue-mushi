@@ -1,15 +1,27 @@
 <template>
 	<mu-container class="media">
 		<md-toolbar slot="header" md-theme="mushi-darker">
-			<md-button class="md-icon-button" @click.native="onClose">
-				<md-icon>close</md-icon>
-			</md-button>
+			<div class="md-toolbar-container">
+				<md-button class="md-icon-button" @click.native="onClose">
+					<md-icon>close</md-icon>
+				</md-button>
 
-			<span style="flex: 1"></span>
+				<span style="flex: 1"></span>
 
-			<md-button class="md-icon-button" @click.native="onConfirm">
-				<md-icon>check</md-icon>
-			</md-button>
+				<md-button class="md-icon-button">
+					<md-icon>delete</md-icon>
+				</md-button>
+
+				<md-button class="md-icon-button" @click.native="onConfirm">
+					<md-icon>check</md-icon>
+				</md-button>
+			</div>
+
+			<div class="md-toolbar-container">
+				<h3 class="media__title md-subheading" style="flex: 1">
+					Important Document.docx
+				</h3>
+			</div>
 		</md-toolbar>
 
 		<template slot="body">
@@ -48,6 +60,9 @@
 	.media{
 		&__main{
 			padding: 20px;
+		}
+		&__title{
+			padding: 0 15px;
 		}
 	}
 </style>

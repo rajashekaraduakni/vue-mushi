@@ -1,5 +1,5 @@
-import UserList from './user-list/UserList';
-import UserForm from './user-form/UserForm';
+import UserList from './UserList';
+import UserForm from './UserForm';
 
 export default [
 	{

@@ -44,12 +44,12 @@
 </template>
 
 <script>
-	import { validateParent } from '../../../mixins/validate';
-	import router from '../../../router';
-	import users from '../mock';
-	import UserFieldset from '../user-fieldset/UserFieldset';
-	import UserFieldsetPassword from '../user-fieldset/UserFieldsetPassword';
-	import UserFieldsetAvatar from '../user-fieldset/UserFieldsetAvatar';
+	import { validateParent } from '../../mixins/validate';
+	import router from '../../router';
+	import users from './mock';
+	import UserFieldset from './UserFieldset';
+	import UserFieldsetPassword from './UserFieldsetPassword';
+	import UserFieldsetAvatar from './UserFieldsetAvatar';
 
 	export default {
 		components: {

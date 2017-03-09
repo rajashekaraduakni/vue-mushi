@@ -6,6 +6,14 @@
 			</md-button>
 
 			<h2 class="md-title" style="flex: 1">Posts</h2>
+
+			<md-button class="md-icon-button">
+				<md-icon>search</md-icon>
+			</md-button>
+
+			<md-button class="md-icon-button">
+				<md-icon>filter_list</md-icon>
+			</md-button>
 		</md-toolbar>
 
 		<md-list slot="body">

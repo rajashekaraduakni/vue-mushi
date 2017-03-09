@@ -35,15 +35,8 @@
 					<adm-page-fieldset-category>
 					</adm-page-fieldset-category>
 
-					<mu-gallery-single ref="thumbnail">
-						<adm-media-photo-form
-							slot="sidenav"
-							@close="$refs.thumbnail.closeSidenav()"
-							@confirm="$refs.thumbnail.closeSidenav()"
-						>
-						</adm-media-photo-form>
-					</mu-gallery-single>
-
+					<adm-page-fieldset-thumbnail>
+					</adm-page-fieldset-thumbnail>
 				</md-layout>
 			</md-layout>
 		</form>
@@ -56,13 +49,13 @@
 	import pages from './mock';
 	import PageFieldset from './PageFieldset';
 	import PageFieldsetCategory from './PageFieldsetCategory';
-	import MediaPhotoForm from '../media/media-photo/MediaPhotoForm';
+	import PageFieldsetThumbnail from './PageFieldsetThumbnail';
 
 	export default {
 		components: {
 			'adm-page-fieldset': PageFieldset,
 			'adm-page-fieldset-category': PageFieldsetCategory,
-			'adm-media-photo-form': MediaPhotoForm
+			'adm-page-fieldset-thumbnail': PageFieldsetThumbnail
 		},
 		mixins: [validateParent],
 		data () {
