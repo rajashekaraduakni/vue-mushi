@@ -54,7 +54,8 @@
 				category: {
 					title: '',
 					slug: ''
-				}
+				},
+				action: 'add'
 			}
 		},
 		beforeRouteEnter(to, from, next) {
