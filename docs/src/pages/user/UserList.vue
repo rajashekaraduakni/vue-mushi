@@ -7,9 +7,8 @@
 
 			<h2 class="md-title" style="flex: 1">Users</h2>
 
-			<md-button class="md-icon-button">
-				<md-icon>search</md-icon>
-			</md-button>
+			<mu-search>
+			</mu-search>
 
 			<md-button class="md-icon-button">
 				<md-icon>filter_list</md-icon>
@@ -77,6 +76,3 @@
 		}
 	}
 </script>
-
-<style>
-</style>

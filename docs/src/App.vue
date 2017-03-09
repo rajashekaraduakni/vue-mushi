@@ -35,4 +35,19 @@
 		opacity: 0;
 		transform: scale(0.8);
 	}
+
+	// Fade right transitions
+	.fade-enter-active {
+		transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	}
+	.fade-leave-active {
+		transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	}
+	.fade-enter {
+		opacity: 0;
+	}
+	.fade-leave-active {
+		opacity: 0;
+	}
+
 </style>

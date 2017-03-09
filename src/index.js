@@ -39,6 +39,7 @@ import GalleryDialog from './components/gallery/GalleryDialog';
 import GalleryGrid from './components/gallery/GalleryGrid';
 import Editor from './components/editor/Editor';
 import Uploader from './components/uploader/Uploader';
+import Search from './components/search/Search';
 
 export default function (Vue, options) {
 /*
@@ -60,4 +61,5 @@ export default function (Vue, options) {
 	Vue.component('mu-gallery-grid', GalleryGrid);
 	Vue.component('mu-editor', Editor);
 	Vue.component('mu-uploader', Uploader);
+	Vue.component('mu-search', Search);
 }
