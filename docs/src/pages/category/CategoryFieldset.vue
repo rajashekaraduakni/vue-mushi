@@ -1,26 +1,57 @@
 <template>
-	<div>
-		<span class="md-subheading">Category</span>
+	<md-layout md-gutter="16">
+		<md-layout md-flex="100" class="md-subheading">Category</md-layout>
 
-		<md-input-container
-			:class="{'md-input-invalid': errors.has('title')}"
+		<md-layout
+			md-flex="50"
+			md-flex-small="100"
 		>
-			<label>Title</label>
-			<md-input
-				data-vv-name="title"
-				v-model="category.title"
-				v-validate:title="'required|min:4'"
+			<!-- Title -->
+			<md-input-container
+				:class="{'md-input-invalid': errors.has('title')}"
 			>
-			</md-input>
+				<label>Title</label>
+				<md-input
+					data-vv-name="title"
+					v-model="category.title"
+					v-validate:title="'required|min:4'"
+				>
+				</md-input>
 
-			<span
-				class="md-error"
-				v-show="errors.has('title')"
+				<span
+					class="md-error"
+					v-show="errors.has('title')"
+				>
+					{{ errors.first('title') }}
+				</span>
+			</md-input-container>
+		</md-layout>
+
+		<md-layout
+			md-flex="50"
+			md-flex-small="100"
+		>
+			<!-- Slug -->
+			<md-input-container
+				:class="{'md-input-invalid': errors.has('slug')}"
 			>
-				{{ errors.first('title') }}
-			</span>
-		</md-input-container>
-	</div>
+				<label>Slug</label>
+				<md-input
+					data-vv-name="slug"
+					v-model="category.slug"
+					v-validate:slug="'required|min:4'"
+				>
+				</md-input>
+
+				<span
+					class="md-error"
+					v-show="errors.has('slug')"
+				>
+					{{ errors.first('slug') }}
+				</span>
+			</md-input-container>
+		</md-layout>
+	</md-layout>
 </template>
 
 <script>
@@ -31,8 +62,9 @@
 		props: {
 			category: {
 				type: Object,
-				default: () => {
-					title: ''
+				default: {
+					title: '',
+					slug: ''
 				}
 			}
 		}
