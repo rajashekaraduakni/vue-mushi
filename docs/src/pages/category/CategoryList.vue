@@ -9,10 +9,6 @@
 
 			<mu-search>
 			</mu-search>
-
-			<md-button class="md-icon-button">
-				<md-icon>filter_list</md-icon>
-			</md-button>
 		</md-toolbar>
 
 		<md-list slot="body">

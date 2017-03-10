@@ -10,9 +10,12 @@
 			<mu-search>
 			</mu-search>
 
-			<md-button class="md-icon-button">
+			<md-button class="md-icon-button" @click.native="$refs.filter.open()">
 				<md-icon>filter_list</md-icon>
 			</md-button>
+
+			<adm-user-filter ref="filter">
+			</adm-user-filter>
 		</md-toolbar>
 
 		<md-list slot="body">
@@ -37,11 +40,13 @@
 	import { mapMutations } from 'vuex';
 	import router from '../../router';
 	import users from './mock';
-	import UserListItem from './UserItem'; 
+	import UserItem from './UserItem'; 
+	import UserFilter from './UserFilter'; 
 
 	export default {
 		components: {
-			'adm-user-item': UserListItem
+			'adm-user-item': UserItem,
+			'adm-user-filter': UserFilter
 		},
 		data () {
 			return {

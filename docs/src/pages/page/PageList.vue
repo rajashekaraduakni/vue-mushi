@@ -10,9 +10,12 @@
 			<mu-search>
 			</mu-search>
 
-			<md-button class="md-icon-button">
+			<md-button class="md-icon-button" @click.native="$refs.filter.open()">
 				<md-icon>filter_list</md-icon>
 			</md-button>
+
+			<adm-page-filter ref="filter">
+			</adm-page-filter>
 		</md-toolbar>
 
 		<md-list slot="body">
@@ -38,10 +41,12 @@
 	import router from '../../router';
 	import pages from './mock';
 	import PageItem from './PageItem'; 
+	import PageFilter from './PageFilter';
 
 	export default {
 		components: {
-			'adm-page-item': PageItem
+			'adm-page-item': PageItem,
+			'adm-page-filter': PageFilter
 		},
 		data () {
 			return {

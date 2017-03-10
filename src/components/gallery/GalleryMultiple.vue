@@ -20,16 +20,16 @@
 					class="gallery__whiteframe"
 					md-elevation="2"
 				>
-					<mu-gallery-thumbnail
-						@click="openDialog"
+					<mu-thumbnail
+						@click="onSelect"
 					>
 						<md-button
 							class="md-fab md-mini md-warn md-fab-top-right"
-							@click.stop="deleteThumbnail"
+							@click.native.stop="onDelete"
 						>
 							<md-icon>delete</md-icon>
 						</md-button>
-					</mu-gallery-thumbnail>
+					</mu-thumbnail>
 				</md-whiteframe>
 			</md-layout>
 
@@ -37,18 +37,12 @@
 
 		<md-button
 			class="gallery__action gallery__action--set md-button md-raised md-primary"
-			@click="openDialog"
+			@click="onSelect"
 		>
 			Add Image
 		</md-button>
 
-		<mu-gallery-dialog
-			ref="dialog"
-			:limit="limit"
-		>
-			<slot name="sidebar">
-			</slot>
-		</mu-gallery-dialog>
+		<slot></slot>
 	</div>
 </template>
 
@@ -84,14 +78,11 @@
 			}
 		},
 		methods: {
-			deleteThumbnail () {
-			
+			onSelect () {
+				this.$emit('select');
 			},
-			openDialog () {
-				this.$refs.dialog.open();
-			},
-			closeSidebar () {
-				this.$refs.dialog.closeSidebar();
+			onDelete () {
+				this.$emit('delete');
 			}
 		}
 	}

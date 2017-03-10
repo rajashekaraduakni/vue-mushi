@@ -10,10 +10,6 @@
 			<mu-search>
 			</mu-search>
 
-			<md-button class="md-icon-button">
-				<md-icon>filter_list</md-icon>
-			</md-button>
-
 			<md-menu md-align-trigger md-direction="bottom left" md-size="4">
 				<md-button class="md-icon-button" md-menu-trigger>
 					<md-icon v-if="view == 'grid'">view_module</md-icon>

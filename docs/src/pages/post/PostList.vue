@@ -10,9 +10,12 @@
 			<mu-search>
 			</mu-search>
 
-			<md-button class="md-icon-button">
+			<md-button class="md-icon-button" @click.native="$refs.filter.open()">
 				<md-icon>filter_list</md-icon>
 			</md-button>
+
+			<adm-post-filter ref="filter">
+			</adm-post-filter>
 		</md-toolbar>
 
 		<md-list slot="body">
@@ -38,10 +41,12 @@
 	import router from '../../router';
 	import posts from './mock';
 	import PostItem from './PostItem';
+	import PostFilter from './PostFilter';
 
 	export default {
 		components: {
-			'adm-post-item': PostItem
+			'adm-post-item': PostItem,
+			'adm-post-filter': PostFilter
 		},
 		data () {
 			return {

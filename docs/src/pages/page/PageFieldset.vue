@@ -87,14 +87,34 @@
 				</span>
 			</md-input-container>
 		</md-layout>
+
+		<md-layout
+			md-flex="100"
+		>
+			<mu-gallery-multiple
+				ref="gallery"
+				@select="$refs.dialog.open()"
+			>
+				<adm-media-photo-dialog
+					ref="dialog"
+					:images="images"
+					:queue="queue"
+				>
+				</adm-media-photo-dialog>
+			</mu-gallery-multiple>
+		</md-layout>
 	</md-layout>
 </template>
 
 <script>
 	import { validateChild } from '../../mixins/validate';
+	import MediaPhotoDialog from '../media/media-photo/MediaPhotoDialog';
 
 	export default {
 		mixins: [validateChild],
+		components: {
+			'adm-media-photo-dialog': MediaPhotoDialog
+		},
 		props: {
 			page: {
 				Type: Object,
@@ -107,6 +127,33 @@
 						thumbnail: ''
 					}
 				}
+			}
+		},
+		data () {
+			return {
+				queue: [],
+				images: [
+					{ url: '1' },
+					{ url: '2' },
+					{ url: '3' },
+					{ url: '4' },
+					{ url: '5' },
+					{ url: '6' },
+					{ url: '7' },
+					{ url: '8' },
+					{ url: '9' },
+					{ url: '10' },
+					{ url: '11' },
+					{ url: '12' },
+					{ url: '13' },
+					{ url: '14' },
+					{ url: '15' },
+					{ url: '16' },
+					{ url: '17' },
+					{ url: '18' },
+					{ url: '19' },
+					{ url: '20' }
+				]
 			}
 		}
 	}
