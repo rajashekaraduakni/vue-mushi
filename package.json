@@ -2,10 +2,12 @@
   "name": "vue-mushi",
   "version": "0.0.1",
   "description": "Vue plugin with many CMS related utility",
-  "main": "index.js",
+  "main": "dist/vue-mushi.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register",
     "build:docs": "babel-node build/server/build-docs.js",
+    "build:lib": "babel-node build/server/build-lib.js",
+    "build": "rm -rf dist && npm run build:docs && npm run build:lib",
     "dev": "babel-node build/server/index.js"
   },
   "repository": {

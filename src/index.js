@@ -1,32 +1,3 @@
-/*import {
-	InputTextComponent,
-	InputTextareaComponent,
-	SelectComponent,
-	CheckboxComponent,
-	EditorComponent,
-	SnackbarComponent,
-	GalleryThumbnailComponent,
-	GallerySingleComponent,
-	GalleryMultipleComponent,
-	GalleryDialogComponent,
-	UploaderComponent
-} from './components'
-
-
-import {
-	ListTemplate,
-	FormTemplate,
-	SidebarTemplate
-} from './layouts';
-
-import {
-	LoadMoreDirective
-} from './directives';
-
-import {
-	SlugifyFilter
-} from './filters';
-*/
 import Auth from './templates/auth/Auth';
 import AuthForm from './templates/auth/AuthForm';
 import Panel from './templates/panel/Panel';
@@ -43,13 +14,6 @@ import Uploader from './components/uploader/Uploader';
 import Search from './components/search/Search';
 
 export default function (Vue, options) {
-/*
-	// Directives
-	Vue.directive('mu-load-more', LoadMoreDirective);
-
-	// Filters
-	Vue.filter('slugify', SlugifyFilter);
-*/
 	Vue.component('mu-auth', Auth);
 	Vue.component('mu-auth-form', AuthForm);
 	Vue.component('mu-panel', Panel);
