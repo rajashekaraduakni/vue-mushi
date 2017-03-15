@@ -1,7 +1,7 @@
 <template>
 	<div
 		class="auth"
-		:style="{'background-image': 'url(' + background + ')'}"
+		:style="{'background-image': background ? 'url(' + background + ')' : 'black'}"
 	>
 		<slot></slot>
 
