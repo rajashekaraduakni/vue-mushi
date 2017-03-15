@@ -1,6 +1,6 @@
 {
   "name": "vue-mushi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vue plugin with many CMS related utility",
   "main": "dist/vue-mushi.js",
   "scripts": {
