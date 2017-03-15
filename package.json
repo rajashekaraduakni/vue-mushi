@@ -23,11 +23,11 @@
     "template"
   ],
   "author": "Giseudo Oliveira",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Giseudo/vue-mushi/issues"
+    "url": "https://giseudo.github.io/Giseudo/vue-mushi/issues"
   },
-  "homepage": "https://github.com/Giseudo/vue-mushi#readme",
+  "homepage": "https://giseudo.github.io/vue-mushi",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-loader": "^6.3.2",
