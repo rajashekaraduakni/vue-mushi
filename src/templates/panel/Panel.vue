@@ -20,7 +20,7 @@
 		>
 			<slot name="sidenav-right"></slot>
 		</md-sidenav>
-	</mu-panel>
+	</div>
 </template>
 
 <script>
