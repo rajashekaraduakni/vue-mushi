@@ -61,7 +61,8 @@
 		height: 100%;
 		display: flex;
 		flex-flow: column;
-		transition: padding .4s cubic-bezier(.25,.8,.25,1);
+		transition: all .4s cubic-bezier(.25,.8,.25,1);
+		overflow: hidden;
 		&__header{
 			position: relative;
 			z-index: 3;

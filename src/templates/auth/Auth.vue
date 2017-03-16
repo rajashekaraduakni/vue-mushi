@@ -1,8 +1,5 @@
 <template>
-	<div
-		class="auth"
-		:style="{'background-image': background ? 'url(' + background + ')' : 'black'}"
-	>
+	<div class="auth" :background-image="'url(' + background + ')'">
 		<slot></slot>
 
 		<span class="auth__overlay"></span>
