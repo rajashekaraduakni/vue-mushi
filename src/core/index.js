@@ -3,13 +3,13 @@ import Logger from './logger';
 export default function install(Vue) {
 	if (install.installed) {
 		console.warn('Vue Mushi is already installed.');
-		return
+		return;
 	}
 
 	Vue.$mushi = new Vue({
-		data: () => ({
-			//
-		}),
+		data () {
+			return {}
+		},
 		methods: {
 			//
 		}

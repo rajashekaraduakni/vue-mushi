@@ -20,8 +20,8 @@ export default merge(baseWebpackConfig, {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			filename: 'docs/index.html',
-			template: 'docs/index.html',
+			filename: 'demo/index.html',
+			template: 'demo/index.html',
 			title: 'Vue Mushi',
 			inject: true
 		})

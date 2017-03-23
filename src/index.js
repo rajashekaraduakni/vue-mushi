@@ -1,9 +1,8 @@
 import Core from './core';
-import Auth from './templates/auth/Auth';
-import AuthForm from './templates/auth/AuthForm';
-import Panel from './templates/panel/Panel';
-import Container from './templates/container/Container';
 
+import Intro from './components/intro/Intro';
+import Auth from './components/auth/Auth';
+import Container from './components/container/Container';
 import Snackbar from './components/snackbar/Snackbar';
 import Thumbnail from './components/thumbnail/Thumbnail';
 import GallerySingle from './components/gallery/GallerySingle';
@@ -18,8 +17,7 @@ export default function (Vue, options) {
 	Vue.use(Core);
 
 	Vue.component('mu-auth', Auth);
-	Vue.component('mu-auth-form', AuthForm);
-	Vue.component('mu-panel', Panel);
+	Vue.component('mu-intro', Intro);
 	Vue.component('mu-container', Container);
 
 	Vue.component('mu-snackbar', Snackbar);

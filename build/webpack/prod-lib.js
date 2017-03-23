@@ -6,12 +6,14 @@ import baseWebpackConfig from './base';
 const version = require('../../package.json').version;
 
 export default merge(baseWebpackConfig, {
-	entry: './src/index.js',
+	entry: {
+		lib: './src/index.js'
+	},
 	output: {
 		path: './dist',
 		publicPath: '',
-		filename: 'vue-mushi.js',
-		chunkFilename: 'vue-mushi.js',
+		filename: '[name].bundle.js',
+		chunkFilename: '[name].bundle.js',
 		library: 'VueMushi',
 		libraryTarget: 'umd'
 	},
@@ -30,10 +32,11 @@ export default merge(baseWebpackConfig, {
 			sourceMap: false
 		}),
 		new webpack.BannerPlugin({
-			banner: `/*!
-			  * Vue Mushi v${version}
-			  * * Released under the MIT License.
-			  * */   `,
+			banner:
+`/*!
+* Vue Mushi v${version}
+* Released under the MIT License.
+*/`,
 			raw: true,
 			entryOnly: true
 		}),

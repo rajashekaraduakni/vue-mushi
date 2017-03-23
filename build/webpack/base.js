@@ -6,9 +6,6 @@ const resolvePath = (dir) => {
 };
 
 export default {
-	entry: {
-		docs: './docs/src/index.js'
-	},
 	output: {
 		path: config.rootPath,
 		publicPath: config.publicPath,
@@ -41,9 +38,9 @@ export default {
 				test: /\.js$/,
 				loader: 'babel-loader',
 				exclude: 'node_modules',
-				include: [
-					resolvePath('docs')
-				]
+				query: {
+					presets: ['es2015']
+				}
 			},
 			{
 				test: /\.json$/,
