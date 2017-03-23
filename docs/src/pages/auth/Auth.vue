@@ -1,6 +1,6 @@
 <template>
 	<mu-auth
-		background="assets/images/mountain-range.jpg"
+		:style="{'background-image': 'url(assets/images/mountain-range.jpg)'}"
 	>
 		<transition name="scale-fade">
 			<router-view></router-view>

@@ -25,7 +25,7 @@
 		</aside>
 
 		<!-- Footer Slot -->
-		<footer class="container__footer" :class="{'logger-is-active': logger}">
+		<footer class="container__footer" :class="{'logger-is-active': $logger.active}">
 			<slot name="footer"></slot>
 		</footer>
 	</div>
@@ -35,11 +35,6 @@
 	import { mapGetters } from 'vuex';
 
 	export default {
-		computed: {
-			...mapGetters({
-				logger: 'mushi/logger/getActive'
-			})
-		},
 		data () {
 			return {
 				sidenav: false

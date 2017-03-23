@@ -1,3 +1,4 @@
+import Core from './core';
 import Auth from './templates/auth/Auth';
 import AuthForm from './templates/auth/AuthForm';
 import Panel from './templates/panel/Panel';
@@ -14,6 +15,8 @@ import Uploader from './components/uploader/Uploader';
 import Search from './components/search/Search';
 
 export default function (Vue, options) {
+	Vue.use(Core);
+
 	Vue.component('mu-auth', Auth);
 	Vue.component('mu-auth-form', AuthForm);
 	Vue.component('mu-panel', Panel);

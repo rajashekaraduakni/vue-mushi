@@ -1,5 +1,5 @@
 <template>
-	<div class="auth" :background-image="'url(' + background + ')'">
+	<div class="auth">
 		<slot></slot>
 
 		<span class="auth__overlay"></span>
@@ -9,10 +9,6 @@
 <script>
 	export default {
 		props: {
-			background: {
-				type: String,
-				default: ''
-			}
 		},
 		methods: {
 		}

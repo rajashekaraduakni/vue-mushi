@@ -9,7 +9,13 @@
 
 <script>
 	export default {
-		
+		mounted () {
+			setTimeout(() => {
+				this.$logger.info('OMFG');
+				this.$logger.info('OMFG');
+				this.$logger.error('OMFG');
+			}, 400)
+		}
 	}
 </script>
 

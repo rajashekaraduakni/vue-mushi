@@ -2,24 +2,24 @@
 	<md-snackbar
 		md-position="bottom center"
 		ref="snackbar"
-		:md-duration="(active) ? active.timeout : 4000"
-		@close="removeMessage(active)"
+		:md-duration="($logger.active) ? $logger.active.timeout : 4000"
+		@close="onClose($logger.active)"
 	>
-		<span v-if="active">
-			{{ active.text }}
+		<span v-if="$logger.active">
+			{{ $logger.active.text }}
 		</span>
 
-		<md-button v-if="active"
+		<md-button v-if="$logger.active"
 			class="md-primary"
 			:md-theme="
-				(active.type == 'info') ? 'mushi' :
-				(active.type == 'success') ? 'mushi-green' :
-				(active.type == 'error') ? 'mushi-red' :
-				(active.type == 'warn') ? 'mushi-gold' : ''
+				($logger.active.type == 'info') ? 'mushi' :
+				($logger.active.type == 'success') ? 'mushi-green' :
+				($logger.active.type == 'error') ? 'mushi-red' :
+				($logger.active.type == 'warn') ? 'mushi-gold' : ''
 			"
-			@click.native="onConfirm(active)"
+			@click.native="onConfirm($logger.active)"
 		>
-			{{ active.action }}
+			{{ $logger.active.action }}
 		</md-button>
 	</md-snackbar>
 </template>
@@ -28,59 +28,35 @@
 	import { mapGetters, mapMutations } from 'vuex';
 
 	export default {
-		data () {
-			return {
-				queue: []
-			}
-		},
-		computed: {
-			...mapGetters({
-				active: 'mushi/logger/getActive',
-				messages: 'mushi/logger/getMessages'
-			})
-		},
-		watch: {
-			messages (value) {
-				this.addMessage(value[0])
-			}
+		mounted () {
+			this.$logger.$on('add', this.onAdd);
 		},
 		methods: {
-			...mapMutations({
-				setActive: 'mushi/logger/setActive'
-			}),
-			addMessage (message) {
-				this.queue.unshift(message);
-
-				if (this.active == null)
-					this.setActive({
-						snackbar: this.$refs.snackbar,
-						message: message
-					});
+			onAdd (message) {
+				if (this.$logger.active == null) {
+					this.$logger.setActive(message);
+					this.$refs.snackbar.open();
+				}
 			},
-			removeMessage (message) {
-				let index = this.queue.indexOf(message);
+			onClose (message) {
+				let index = this.$logger.queue.indexOf(message);
 
 				if (index != -1)
-					this.queue.splice(index, 1);
+					this.$logger.queue.splice(index, 1);
 
 				setTimeout(() => {
-					if (this.queue.length > 0) {
-						// Wait message hide
-						this.setActive({
-							snackbar: this.$refs.snackbar,
-							message: this.queue[0]
-						});
-					} else {
-						this.setActive({ message: null });
+					this.$logger.setActive(null);
+
+					if (this.$logger.queue.length > 0) {
+						this.onAdd(this.$logger.queue[0]);
 					}
 				}, 400);
 			},
 			onConfirm (message) {
 				this.$refs.snackbar.close()
 
-				// Execute message callback
-				if (message.callback)
-					message.callback();
+				// Execute callback
+				message.callback();
 			},
 		}
 	}

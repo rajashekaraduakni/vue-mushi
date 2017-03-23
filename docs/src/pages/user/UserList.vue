@@ -66,13 +66,16 @@
 
 				if (index != -1) {
 					this.users.splice(index, 1);
-					this.$store.commit('mushi/logger/success', {
-						text: 'User ' + user.name + ' deleted successfully!',
-						action: 'Undo',
-						callback () {
+					this.$logger.success(
+						`User ${user.name} deleted!`,
+						'Undo', 4000, () => {
 							vm.users.unshift(user);
+
+							this.$logger.success(
+								`User ${user.name} restored!`
+							);
 						}
-					})
+					);
 				}
 			},
 			add () {
