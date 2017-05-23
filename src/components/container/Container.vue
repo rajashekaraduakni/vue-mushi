@@ -67,9 +67,11 @@
 			flex: 1 100%;
 			display: flex;
 			overflow-y: auto;
-			.md-tabs-content{
-				flex: 1 100%;
-				overflow-y: auto;
+			> .md-tabs{
+				.md-tabs-content{
+					flex: 1 100%;
+					overflow-y: auto;
+				}
 			}
 		}
 		&__sidenav{
