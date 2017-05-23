@@ -51,20 +51,26 @@
 	}
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 	.container{
 		height: 100%;
 		display: flex;
 		flex-flow: column;
 		transition: all .4s cubic-bezier(.25,.8,.25,1);
 		overflow: hidden;
+		position: relative;
 		&__header{
 			position: relative;
 			z-index: 3;
 		}
 		&__body{
 			flex: 1 100%;
+			display: flex;
 			overflow-y: auto;
+			.md-tabs-content{
+				flex: 1 100%;
+				overflow-y: auto;
+			}
 		}
 		&__sidenav{
 			width: 304px;

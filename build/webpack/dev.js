@@ -6,6 +6,12 @@ import baseWebpackConfig from './base';
 
 export default merge(baseWebpackConfig, {
 	devtool: 'cheap-module-eval-source-map',
+	entry: {
+		demo: [
+			'webpack-hot-middleware/client',
+			'./demo/src/index.js'
+		]
+	},
 	module: {
 		rules: [
 			{
@@ -19,11 +25,13 @@ export default merge(baseWebpackConfig, {
 		]
 	},
 	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
 			filename: 'demo/index.html',
 			template: 'demo/index.html',
 			title: 'Vue Mushi',
-			inject: true
+			inject: true,
+			chunks: ['demo']
 		})
 	]
 })

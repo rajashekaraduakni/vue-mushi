@@ -12,34 +12,50 @@
 			</md-button>
 		</md-toolbar>
 
-		<form
-			ref="form"
-			class="page__form"
-			slot="body"
-		>
-			<md-layout md-gutter="16">
-				<md-layout
-					class="page__main"
-					md-flex-small="100"
-					md-flex="66"
+		<md-tabs slot="body" md-fixed>
+			<md-tab id="movies" md-label="Movies">
+				<form
+					ref="form"
+					class="page__form"
 				>
-					<adm-page-fieldset :page="page">
-					</adm-page-fieldset>
-				</md-layout>
+					<md-layout md-gutter="16">
+						<md-layout
+							class="page__main"
+							md-flex-small="100"
+							md-flex="66"
+						>
+							<adm-page-fieldset :page="page">
+							</adm-page-fieldset>
+						</md-layout>
 
-				<md-layout
-					class="page__aside"
-					md-flex-small="100"
-					md-flex="33"
-				>
-					<adm-page-fieldset-category>
-					</adm-page-fieldset-category>
+						<md-layout
+							class="page__aside"
+							md-flex-small="100"
+							md-flex="33"
+						>
+							<adm-page-fieldset-category>
+							</adm-page-fieldset-category>
 
-					<adm-page-fieldset-thumbnail>
-					</adm-page-fieldset-thumbnail>
-				</md-layout>
-			</md-layout>
-		</form>
+							<adm-page-fieldset-thumbnail>
+							</adm-page-fieldset-thumbnail>
+						</md-layout>
+					</md-layout>
+				</form>
+			</md-tab>
+
+			<md-tab id="music" md-label="Music">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.</p>
+			</md-tab>
+
+			<md-tab id="books" md-label="Books">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.</p>
+			</md-tab>
+
+			<md-tab id="pictures" md-label="Pictures">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.</p>
+			</md-tab>
+		</md-tabs>
 	</mu-container>
 </template>
 
@@ -103,7 +119,6 @@
 <style lang="sass" scoped>
 	.page{
 		&__form{
-			padding: 16px;
 		}
 		&__main,
 		&__aside{

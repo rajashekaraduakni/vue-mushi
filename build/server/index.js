@@ -17,17 +17,7 @@ const devMiddlewareInstance = devMiddleware(compiler, {
 	index: config.indexPath
 });
 
-const hotMiddlewareInstance = hotMiddleware(compiler, {
-	log() { }
-});
-
-compiler.plugin('compilation', (compilation) => {
-	compilation.plugin('html-webpack-plugin-after-emit', (data, done) => {
-		hotMiddlewareInstance.publish({ action: 'reload' });
-
-		done();
-	});
-});
+const hotMiddlewareInstance = hotMiddleware(compiler, {});
 
 app.use(devMiddlewareInstance);
 app.use(hotMiddlewareInstance);
@@ -41,9 +31,6 @@ devMiddlewareInstance.waitUntilValid(() => {
 });
 
 export default app.listen(8080, (error) => {
-	if(error) {
-		console.log(chalk.red(error));
-
-		return;
-	}
+	if(error)
+		return console.log(chalk.red(error));
 });

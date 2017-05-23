@@ -9,7 +9,7 @@ export default {
 	output: {
 		path: config.rootPath,
 		publicPath: config.publicPath,
-		filename: '[name].[chunkhash:8].js',
+		filename: '[name].bundle.js',
 	},
 	resolve: {
 		extensions: ['.js', '.vue', '.json']
