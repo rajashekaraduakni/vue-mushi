@@ -18864,6 +18864,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
 	components: {
@@ -36715,7 +36731,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "\n.container[data-v-1f550886] {\n  height: 100%;\n  display: flex;\n  flex-flow: column;\n  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n  overflow: hidden;\n}\n.container__header[data-v-1f550886] {\n    position: relative;\n    z-index: 3;\n}\n.container__body[data-v-1f550886] {\n    flex: 1 100%;\n    overflow-y: auto;\n}\n.container__sidenav[data-v-1f550886] {\n    width: 304px;\n    position: absolute;\n    top: 0;\n    right: -304px;\n    bottom: 52px;\n    height: 100%;\n    z-index: 3;\n    background: #ebebeb;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.container__sidenav .container__sidenav[data-v-1f550886] {\n      display: none !important;\n}\n.container__sidenav-frame[data-v-1f550886] {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    visibility: hidden;\n}\n.container__footer[data-v-1f550886] {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 5;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.container__footer.logger-is-active[data-v-1f550886] {\n      bottom: 50px;\n}\n.container.sidenav-is-open[data-v-1f550886] {\n    padding-right: 304px;\n}\n.container.sidenav-is-open .container__sidenav[data-v-1f550886] {\n      right: 0;\n}\n.container.sidenav-is-open .container__sidenav-frame[data-v-1f550886] {\n      visibility: visible;\n}\n.container.sidenav-is-open .container__footer[data-v-1f550886] {\n      right: 304px;\n}\n", "", {"version":3,"sources":["/./src/components/container/Container.vue"],"names":[],"mappings":";AAAA;EACE,aAAa;EACb,cAAc;EACd,kBAAkB;EAClB,sDAAsD;EACtD,iBAAiB;CAAE;AACnB;IACE,mBAAmB;IACnB,WAAW;CAAE;AACf;IACE,aAAa;IACb,iBAAiB;CAAE;AACrB;IACE,aAAa;IACb,mBAAmB;IACnB,OAAO;IACP,cAAc;IACd,aAAa;IACb,aAAa;IACb,WAAW;IACX,oBAAoB;IACpB,sDAAsD;CAAE;AACxD;MACE,yBAAyB;CAAE;AAC/B;IACE,mBAAmB;IACnB,YAAY;IACZ,aAAa;IACb,iBAAiB;IACjB,mBAAmB;CAAE;AACvB;IACE,mBAAmB;IACnB,UAAU;IACV,QAAQ;IACR,SAAS;IACT,WAAW;IACX,sDAAsD;CAAE;AACxD;MACE,aAAa;CAAE;AACnB;IACE,qBAAqB;CAAE;AACvB;MACE,SAAS;CAAE;AACb;MACE,oBAAoB;CAAE;AACxB;MACE,aAAa;CAAE","file":"Container.vue","sourcesContent":[".container {\n  height: 100%;\n  display: flex;\n  flex-flow: column;\n  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n  overflow: hidden; }\n  .container__header {\n    position: relative;\n    z-index: 3; }\n  .container__body {\n    flex: 1 100%;\n    overflow-y: auto; }\n  .container__sidenav {\n    width: 304px;\n    position: absolute;\n    top: 0;\n    right: -304px;\n    bottom: 52px;\n    height: 100%;\n    z-index: 3;\n    background: #ebebeb;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .container__sidenav .container__sidenav {\n      display: none !important; }\n  .container__sidenav-frame {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    visibility: hidden; }\n  .container__footer {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 5;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .container__footer.logger-is-active {\n      bottom: 50px; }\n  .container.sidenav-is-open {\n    padding-right: 304px; }\n    .container.sidenav-is-open .container__sidenav {\n      right: 0; }\n    .container.sidenav-is-open .container__sidenav-frame {\n      visibility: visible; }\n    .container.sidenav-is-open .container__footer {\n      right: 304px; }\n"],"sourceRoot":"webpack://"}]);
+exports.push([module.i, "\n.container {\n  height: 100%;\n  display: flex;\n  flex-flow: column;\n  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n  overflow: hidden;\n  position: relative;\n}\n.container__header {\n    position: relative;\n    z-index: 3;\n}\n.container__body {\n    flex: 1 100%;\n    display: flex;\n    overflow-y: auto;\n}\n.container__body .md-tabs-content {\n      flex: 1 100%;\n      overflow-y: auto;\n}\n.container__sidenav {\n    width: 304px;\n    position: absolute;\n    top: 0;\n    right: -304px;\n    bottom: 52px;\n    height: 100%;\n    z-index: 3;\n    background: #ebebeb;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.container__sidenav .container__sidenav {\n      display: none !important;\n}\n.container__sidenav-frame {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    visibility: hidden;\n}\n.container__footer {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 5;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.container__footer.logger-is-active {\n      bottom: 50px;\n}\n.container.sidenav-is-open {\n    padding-right: 304px;\n}\n.container.sidenav-is-open .container__sidenav {\n      right: 0;\n}\n.container.sidenav-is-open .container__sidenav-frame {\n      visibility: visible;\n}\n.container.sidenav-is-open .container__footer {\n      right: 304px;\n}\n", "", {"version":3,"sources":["/./src/components/container/Container.vue"],"names":[],"mappings":";AAAA;EACE,aAAa;EACb,cAAc;EACd,kBAAkB;EAClB,sDAAsD;EACtD,iBAAiB;EACjB,mBAAmB;CAAE;AACrB;IACE,mBAAmB;IACnB,WAAW;CAAE;AACf;IACE,aAAa;IACb,cAAc;IACd,iBAAiB;CAAE;AACnB;MACE,aAAa;MACb,iBAAiB;CAAE;AACvB;IACE,aAAa;IACb,mBAAmB;IACnB,OAAO;IACP,cAAc;IACd,aAAa;IACb,aAAa;IACb,WAAW;IACX,oBAAoB;IACpB,sDAAsD;CAAE;AACxD;MACE,yBAAyB;CAAE;AAC/B;IACE,mBAAmB;IACnB,YAAY;IACZ,aAAa;IACb,iBAAiB;IACjB,mBAAmB;CAAE;AACvB;IACE,mBAAmB;IACnB,UAAU;IACV,QAAQ;IACR,SAAS;IACT,WAAW;IACX,sDAAsD;CAAE;AACxD;MACE,aAAa;CAAE;AACnB;IACE,qBAAqB;CAAE;AACvB;MACE,SAAS;CAAE;AACb;MACE,oBAAoB;CAAE;AACxB;MACE,aAAa;CAAE","file":"Container.vue","sourcesContent":[".container {\n  height: 100%;\n  display: flex;\n  flex-flow: column;\n  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);\n  overflow: hidden;\n  position: relative; }\n  .container__header {\n    position: relative;\n    z-index: 3; }\n  .container__body {\n    flex: 1 100%;\n    display: flex;\n    overflow-y: auto; }\n    .container__body .md-tabs-content {\n      flex: 1 100%;\n      overflow-y: auto; }\n  .container__sidenav {\n    width: 304px;\n    position: absolute;\n    top: 0;\n    right: -304px;\n    bottom: 52px;\n    height: 100%;\n    z-index: 3;\n    background: #ebebeb;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .container__sidenav .container__sidenav {\n      display: none !important; }\n  .container__sidenav-frame {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    visibility: hidden; }\n  .container__footer {\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 5;\n    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }\n    .container__footer.logger-is-active {\n      bottom: 50px; }\n  .container.sidenav-is-open {\n    padding-right: 304px; }\n    .container.sidenav-is-open .container__sidenav {\n      right: 0; }\n    .container.sidenav-is-open .container__sidenav-frame {\n      visibility: visible; }\n    .container.sidenav-is-open .container__footer {\n      right: 304px; }\n"],"sourceRoot":"webpack://"}]);
 
 // exports
 
@@ -36813,7 +36829,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "\n.page__form[data-v-54977809] {\n  padding: 16px;\n}\n.page__main[data-v-54977809], .page__aside[data-v-54977809] {\n  flex-flow: column wrap;\n}\n", "", {"version":3,"sources":["/./demo/src/pages/page/PageForm.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE;AAElB;EACE,uBAAuB;CAAE","file":"PageForm.vue","sourcesContent":[".page__form {\n  padding: 16px; }\n\n.page__main, .page__aside {\n  flex-flow: column wrap; }\n"],"sourceRoot":"webpack://"}]);
+exports.push([module.i, "\n.page__main[data-v-54977809], .page__aside[data-v-54977809] {\n  flex-flow: column wrap;\n}\n", "", {"version":3,"sources":["/./demo/src/pages/page/PageForm.vue"],"names":[],"mappings":";AAAA;EACE,uBAAuB;CAAE","file":"PageForm.vue","sourcesContent":[".page__main, .page__aside {\n  flex-flow: column wrap; }\n"],"sourceRoot":"webpack://"}]);
 
 // exports
 
@@ -38670,7 +38686,7 @@ var Component = __webpack_require__(0)(
   /* template */
   __webpack_require__(222),
   /* scopeId */
-  "data-v-1f550886",
+  null,
   /* cssModules */
   null
 )
@@ -40455,10 +40471,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.submit(_vm.success)
       }
     }
-  }, [_c('md-icon', [_vm._v("check")])], 1)], 1), _vm._v(" "), _c('form', {
-    ref: "form",
-    staticClass: "page__form",
+  }, [_c('md-icon', [_vm._v("check")])], 1)], 1), _vm._v(" "), _c('md-tabs', {
+    attrs: {
+      "md-fixed": ""
+    },
     slot: "body"
+  }, [_c('md-tab', {
+    attrs: {
+      "id": "movies",
+      "md-label": "Movies"
+    }
+  }, [_c('form', {
+    ref: "form",
+    staticClass: "page__form"
   }, [_c('md-layout', {
     attrs: {
       "md-gutter": "16"
@@ -40479,7 +40504,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "md-flex-small": "100",
       "md-flex": "33"
     }
-  }, [_c('adm-page-fieldset-category'), _vm._v(" "), _c('adm-page-fieldset-thumbnail')], 1)], 1)], 1)], 1)
+  }, [_c('adm-page-fieldset-category'), _vm._v(" "), _c('adm-page-fieldset-thumbnail')], 1)], 1)], 1)]), _vm._v(" "), _c('md-tab', {
+    attrs: {
+      "id": "music",
+      "md-label": "Music"
+    }
+  }, [_c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.")]), _vm._v(" "), _c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas amet cum vitae, omnis! Illum quas voluptatem, expedita iste, dicta ipsum ea veniam dolore in, quod saepe reiciendis nihil.")])]), _vm._v(" "), _c('md-tab', {
+    attrs: {
+      "id": "books",
+      "md-label": "Books"
+    }
+  }, [_c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.")])]), _vm._v(" "), _c('md-tab', {
+    attrs: {
+      "id": "pictures",
+      "md-label": "Pictures"
+    }
+  }, [_c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolorum quas.")])])], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -43322,13 +43362,13 @@ var content = __webpack_require__(132);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("935258da", content, false);
+var update = __webpack_require__(2)("891f942c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-1f550886\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Container.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-1f550886\",\"scoped\":true,\"hasInlineConfig\":false}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Container.vue");
+   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-1f550886\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Container.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?{\"id\":\"data-v-1f550886\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Container.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
