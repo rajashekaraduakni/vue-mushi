@@ -6,6 +6,7 @@
 
 		<md-whiteframe class="gallery__whiteframe" md-elevation="2">
 			<mu-thumbnail
+				:ratio="ratio"
 				@click="onSelect"
 			>
 				<md-button
@@ -18,10 +19,10 @@
 		</md-whiteframe>
 
 		<md-button
-			class="gallery__action gallery__action--set md-button md-raised md-primary"
+			class="gallery__action gallery__action--set md-button md-raised md-accent"
 			@click.native="onSelect"
 		>
-			Set {{ title }}
+			{{ action }} {{ title }}
 		</md-button>
 
 		<slot></slot>
@@ -39,6 +40,14 @@
 			title: {
 				type: String,
 				default: 'Thumbnail'
+			},
+			action: {
+				type: String,
+				default: 'Set'
+			},
+			ratio: {
+				type: String,
+				default: '1:1'
 			}
 		},
 		methods: {
@@ -54,6 +63,7 @@
 
 <style lang="sass" scoped>
 	.gallery{
+		width: 100%;
 		&__title{
 			display: block;
 			margin-bottom: 10px;

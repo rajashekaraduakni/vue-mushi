@@ -93,6 +93,7 @@
 		>
 			<mu-gallery-multiple
 				ref="gallery"
+				ratio="4:3"
 				@select="$refs.dialog.open()"
 			>
 				<adm-media-photo-dialog

@@ -7,8 +7,13 @@
 
 			<h2 class="md-title" style="flex: 1">Pages</h2>
 
-			<mu-search>
-			</mu-search>
+			<mu-input-expandable @open="$refs.search.$el.focus()">
+				<md-input-container md-inline>
+					<label>Search</label>
+					<md-input ref="search">
+					</md-input>
+				</md-input-container>
+			</mu-input-expandable>
 
 			<md-button class="md-icon-button" @click.native="$refs.filter.open()">
 				<md-icon>filter_list</md-icon>

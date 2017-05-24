@@ -9,7 +9,10 @@
 		@click.native="onClick"
 
 	>
-		<md-card-media class="thumbnail__photo">
+		<md-card-media
+			class="thumbnail__photo"
+			:md-ratio="ratio"
+		>
 			<md-ink-ripple></md-ink-ripple>
 
 			<!-- The thumbnail -->
@@ -57,6 +60,10 @@
 				type: String,
 				default: 'http://lorempixel.com/400/400/'
 			},
+			ratio: {
+				type: String,
+				default: '1:1' // 1:1 or 1/1, 4:3 or 4/3 and 16:9 or 16/9
+			},
 			checked: {
 				type: Boolean,
 				default: false
@@ -90,11 +97,6 @@
 		&__photo{
 			overflow: hidden;
 			position: relative;
-			&:after{
-				content: "";
-				display: block;
-				padding-top: 100%;
-			}
 		}
 		&__check{
 			width: 70px;

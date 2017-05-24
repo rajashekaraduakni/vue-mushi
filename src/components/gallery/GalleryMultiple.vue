@@ -21,6 +21,7 @@
 					md-elevation="2"
 				>
 					<mu-thumbnail
+						:ratio="ratio"
 						@click="onSelect"
 					>
 						<md-button
@@ -36,7 +37,7 @@
 		</md-layout>
 
 		<md-button
-			class="gallery__action gallery__action--set md-button md-raised md-primary"
+			class="gallery__action gallery__action--set md-button md-raised md-accent"
 			@click="onSelect"
 		>
 			Add Image
@@ -53,6 +54,10 @@
 			value: {
 				type: Object,
 				default: () => {}
+			},
+			ratio: {
+				type: String,
+				default: '1:1'
 			},
 			limit: {
 				type: Number,

@@ -65,9 +65,11 @@
 		}
 		&__body{
 			flex: 1 100%;
+			flex-flow: column;
 			display: flex;
 			overflow-y: auto;
 			> .md-tabs{
+				flex: 1 100%;
 				.md-tabs-content{
 					flex: 1 100%;
 					overflow-y: auto;
