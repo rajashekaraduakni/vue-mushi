@@ -30,15 +30,6 @@
 			</md-menu>
 		</md-toolbar>
 
-		<!-- Uploader -->
-		<mu-uploader
-			ref="uploader"
-			action="resource/upload"
-			:queue="queue"
-			@done="onUploaderDone"
-		>
-		</mu-uploader>
-
 		<div v-if="view == 'grid'" slot="body">
 			<mu-gallery-grid
 				v-if="view == 'grid'"
@@ -46,7 +37,6 @@
 				slot="body"
 				:limit="1"
 				:images="images"
-				:queue="queue"
 				@select="onGridSelect"
 			>
 			</mu-gallery-grid>
@@ -72,11 +62,20 @@
 
 		<template slot="footer">
 			<md-button
-				class="gallery__add md-fab md-fab-bottom-right"
+				class="gallery__add md-fab"
 				@click.native="upload"
 			>
 				<md-icon>add</md-icon>
 			</md-button>
+
+			<!-- Uploader -->
+			<mu-uploader
+				ref="uploader"
+				@next="onUploaderNext"
+				@done="onUploaderDone"
+				@cancel="onUploaderCancel"
+			>
+			</mu-uploader>
 
 		</template>
 	</mu-container>
@@ -95,7 +94,6 @@
 		data () {
 			return {
 				view: 'grid',
-				queue: [],
 				images: [
 					{ url: '1' },
 					{ url: '2' },
@@ -152,9 +150,18 @@
 				}
 			},
 
-			// Uploader listeners
+			onUploaderNext (event) {
+				// Upload current file
+				this.$store.dispatch('resource/upload', event)
+					.then(() => this.$refs.uploader.done())
+			},
+
 			onUploaderDone (event) {
 				this.images.unshift({ src: event.preview });
+			},
+
+			onUploaderCancel (event) {
+				this.$store.dispatch('resource/cancel');
 			}
 		}
 	}

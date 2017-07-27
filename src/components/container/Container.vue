@@ -1,9 +1,9 @@
 <template>
-	<div class="container"
+	<div class="mu-container"
 		:class="{'sidenav-is-open': sidenav}"
 	>
 		<!-- Header Slot -->
-		<header class="container__header">
+		<header class="mu-container__header">
 			<md-whiteframe md-elevation="1">
 				<slot name="header"></slot>
 			</md-whiteframe>
@@ -13,19 +13,19 @@
 		<slot></slot>
 
 		<!-- Body Slot -->
-		<section class="container__body">
+		<section class="mu-container__body">
 			<slot name="body"></slot>
 		</section>
 
 		<!-- Sidenav Slot -->
-		<aside class="container__sidenav">
-			<md-whiteframe class="container__sidenav-frame" md-elevation="1">
+		<aside class="mu-container__sidenav">
+			<md-whiteframe class="mu-container__sidenav-frame" md-elevation="1">
 				<slot name="sidenav"></slot>
 			</md-whiteframe>
 		</aside>
 
 		<!-- Footer Slot -->
-		<footer class="container__footer" :class="{'logger-is-active': $logger.active}">
+		<footer class="mu-container__footer" :class="{'logger-is-active': $logger.active}">
 			<slot name="footer"></slot>
 		</footer>
 	</div>
@@ -52,7 +52,7 @@
 </script>
 
 <style lang="sass">
-	.container{
+	.mu-container{
 		height: 100%;
 		display: flex;
 		flex-flow: column;
@@ -86,7 +86,7 @@
 			z-index: 3;
 			background: #ebebeb;
 			transition: all .4s cubic-bezier(.25,.8,.25,1);
-			.container__sidenav{
+			.mu-container__sidenav{
 				display: none !important;
 			}
 		}
@@ -102,15 +102,22 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			z-index: 5;
 			transition: all .4s cubic-bezier(.25,.8,.25,1);
+			display: flex;
+			padding: 16px;
+			align-items: flex-end;
+			justify-content: flex-end;
 			&.logger-is-active{
 				bottom: 50px;
+			}
+			> * {
+				position: relative;
+				z-index: 5;
 			}
 		}
 		&.sidenav-is-open{
 			padding-right: 304px;
-			.container{
+			.mu-container{
 				&__sidenav{
 					right: 0;
 				}

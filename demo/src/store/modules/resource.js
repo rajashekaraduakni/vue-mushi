@@ -1,24 +1,36 @@
 export default {
 	namespaced: true,
+	state: {
+		timer: false
+	},
 	actions: {
 		upload (context, payload) {
 			return new Promise(resolve => {
 				let progress = 0;
-				let timer = setInterval(() => {
+
+				context.state.timer = setInterval(() => {
 					progress++;
 
-					payload.progress({
+					payload.process({
 						lengthComputable: true,
 						loaded: progress,
 						total: 100
 					});
 
+					console.log(progress);
 					if (progress >= 100) {
-						clearInterval(timer);
-						resolve()
+						clearInterval(context.state.timer)
+						resolve();
 					}
+
+					if (!context.state.timer)
+						reject();
 				}, 100);
 			});
 		},
+
+		cancel (context, payload) {
+			clearInterval(context.state.timer)
+		}
 	}
 }
