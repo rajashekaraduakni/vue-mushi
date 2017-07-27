@@ -17,7 +17,6 @@ export default {
 						total: 100
 					});
 
-					console.log(progress);
 					if (progress >= 100) {
 						clearInterval(context.state.timer)
 						resolve();

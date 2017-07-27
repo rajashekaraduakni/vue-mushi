@@ -12,7 +12,7 @@
 				<md-list-item v-for="item in queue" class="mu-uploader__item" :class="{ 'is-processing' : item == current }">
 					<md-avatar class="mu-uploader__icon md-avatar-icon">
 						<md-icon>attachment</md-icon>
-						<md-spinner class="mu-uploader__progress md-warn"
+						<md-spinner class="mu-uploader__progress md-accent"
 							v-if="item == current"
 							:md-size="42"
 							:md-stroke="5"
@@ -22,7 +22,7 @@
 					</md-avatar>
 					<div class="md-list-text-container">
 						<span>{{ item.file.name }}</span>
-						<span>{{ item.file.size / 1000 }}kb</span>
+						<span>{{ Math.round(item.file.size / 1000) }}kb</span>
 					</div>
 					<!-- Item Actions -->
 					<md-button @click="onRemove(item)" class="md-icon-button md-list-action">
