@@ -24,7 +24,7 @@
 			</div>
 		</md-toolbar>
 
-		<template slot="body">
+		<template class="media__body" slot="body">
 			<mu-thumbnail>
 			</mu-thumbnail>
 
@@ -66,6 +66,9 @@
 		}
 		&__title{
 			padding: 0 15px;
+		}
+		&__body{
+			display: block;
 		}
 	}
 </style>

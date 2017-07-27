@@ -1,10 +1,9 @@
 <template>
-	<!-- Gallery Dialog -->
 	<md-dialog
-		class="gallery gallery--dialog"
+		class="mu-gallery-dialog"
 		ref="dialog"
 	>
-		<md-dialog-content class="gallery__content">
+		<md-dialog-content class="mu-gallery-dialog__content">
 			<slot></slot>
 		</md-dialog-content>
 
@@ -14,7 +13,7 @@
 
 			<md-dialog-actions>
 				<!-- Limit -->
-				<span class="gallery__limit">
+				<span class="mu-gallery-dialog__limit">
 					Selected {{ selected }} of {{ limit }}
 				</span>
 
@@ -62,8 +61,8 @@
 	}
 </script>
 
-<style lang="sass" scoped>
-	.gallery{
+<style lang="sass">
+	.mu-gallery-dialog{
 		&__content{
 			position: relative;
 		}
@@ -73,16 +72,10 @@
 		&__limit{
 			flex: 1;
 		}
-	}
-
-	.md-dialog-content{
-		padding: 0 !important;
-		transition: all .4s cubic-bezier(.25,.8,.25,1);
-	}
-</style>
-
-<style lang="sass">
-	.gallery--dialog{
+		.md-dialog-content{
+			padding: 0 !important;
+			transition: all .4s cubic-bezier(.25,.8,.25,1);
+		}
 		.md-dialog{
 			width: 100%;
 			height: 100%;

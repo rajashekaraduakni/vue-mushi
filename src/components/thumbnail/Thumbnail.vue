@@ -1,6 +1,6 @@
 <template>
 	<md-card
-		class="thumbnail card-ripple"
+		class="mu-thumbnail"
 		:class="{
 			'is-active': active,
 			'is-checked': checked,
@@ -10,37 +10,30 @@
 
 	>
 		<md-card-media
-			class="thumbnail__photo"
+			class="mu-thumbnail__photo"
 			:md-ratio="ratio"
 		>
 			<md-ink-ripple></md-ink-ripple>
 
-			<!-- The thumbnail -->
-			<img :src="src" class="thumbnail__thumbnail" alt="People">
+			<!-- The background -->
+			<div class="mu-thumbnail__cover">
+				<img :src="src" class="mu-thumbnail__background" alt="People">
+			</div>
 
 			<transition name="fade">
 				<!-- Overlay -->
 				<span
-					class="thumbnail__overlay"
+					class="mu-thumbnail__overlay"
 					v-if="checked || active"
 				>
 					<!-- Checked icon -->
-					<span class="thumbnail__check">
-						<md-icon class="md-size-2x">check</md-icon>
-					</span>
+					<transition name="scale-fade">
+						<span class="mu-thumbnail__check" v-if="active">
+							<md-icon class="md-size-3x">check</md-icon>
+						</span>
+					</transition>
 				</span>
 			</transition>
-
-			<!-- Upload progress bar -->
-			<md-spinner
-				class="thumbnail__spinner"
-				v-if="uploading"
-				:md-progress="progress"
-				:md-indeterminate="uploading && progress == 0"
-				:md-size="75"
-				:md-stroke="5"
-			>
-			</md-spinner>
 
 			<!-- Slot -->
 			<slot></slot>
@@ -89,7 +82,7 @@
 </script>
 
 <style lang="sass" scoped>
-	.thumbnail{
+	.mu-thumbnail{
 		cursor: pointer;
 		border-radius: 0;
 		box-shadow: none;
@@ -107,26 +100,33 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -50%);
+			margin-top: -35px;
+			margin-left: -35px;
 			display: flex;
 			z-index: 10;
-			transition: background-color .15s ease-out;
 		}
 		&__overlay{
 			position: absolute;
 			border: 8px solid transparent;
-			top: 5px;
-			bottom: 5px;
-			right: 5px;
-			left: 5px;
+			top: 0px;
+			bottom: 0px;
+			right: 0px;
+			left: 0px;
 		}
-		&__thumbnail{
+		&__cover{
 			position: absolute;
-			width: 100%;
-			min-height: 100%;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+			&__background{
+				position: absolute;
+				min-width: 50%;
+				min-height: 50%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 		}
 		&__spinner{
 			position: absolute;
@@ -137,21 +137,14 @@
 		}
 		&.is-checked,
 		&.is-active{
-			.thumbnail{
+			.mu-thumbnail{
 				//
 			}
 		}
 		&.is-checked{
-			.thumbnail{
+			.mu-thumbnail{
 				&__check{
-					background-color: rgba(black, 0.5);
-				}
-			}
-		}
-		&.is-active{
-			.thumbnail{
-				&__check{
-					background-color: #00b0ff;
+					//background-color: rgba(black, 0.5);
 				}
 				&__overlay{
 					background: rgba(black, 0.5);
@@ -159,19 +152,14 @@
 				}
 			}
 		}
-		&.is-uploading{
-			.thumbnail{
-				&__photo{
-					&:before{
-						content: "";
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-						background: rgba(white, 0.7);
-						z-index: 1;
-					}
+		&.is-active{
+			.mu-thumbnail{
+				&__check{
+					//background-color: #00b0ff;
+				}
+				&__overlay{
+					background: rgba(black, 0.5);
+					//border-color: #00b0ff;
 				}
 			}
 		}

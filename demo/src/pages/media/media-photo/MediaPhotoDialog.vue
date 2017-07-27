@@ -8,15 +8,6 @@
 			ref="container"
 			class="gallery__container"
 		>
-			<!-- Uploader -->
-			<mu-uploader
-				ref="uploader"
-				action="resource/upload"
-				:queue="queue"
-				@done="onUploaderDone"
-			>
-			</mu-uploader>
-
 			<!-- Grid -->
 			<mu-gallery-grid
 				ref="grid"
@@ -41,10 +32,21 @@
 			<template slot="footer">
 				<md-button
 					@click.native="upload"
-					class="gallery__add md-fab md-mini md-fab-bottom-right"
+					class="gallery__add md-fab md-mini"
 				>
 					<md-icon>add</md-icon>
 				</md-button>
+
+				<!-- Uploader -->
+				<mu-uploader
+					ref="uploader"
+					action="resource/upload"
+					:queue="queue"
+					@next="onUploaderNext"
+					@done="onUploaderDone"
+					@cancel="onUploaderCancel"
+				>
+				</mu-uploader>
 			</template>
 		</mu-container>
 	</mu-gallery-dialog>
@@ -104,9 +106,18 @@
 				this.$refs.dialog.selected = length;
 			},
 
-			// Uploader listeners
+			onUploaderNext (event) {
+				// Upload current file
+				this.$store.dispatch('resource/upload', event)
+					.then(() => this.$refs.uploader.done())
+			},
+
 			onUploaderDone (event) {
 				this.images.unshift({ src: event.preview });
+			},
+
+			onUploaderCancel (event) {
+				this.$store.dispatch('resource/cancel');
 			}
 		}
 	}

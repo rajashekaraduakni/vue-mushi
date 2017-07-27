@@ -1,10 +1,10 @@
 <template>
 	<div
-		class="input-expandable"
+		class="mu-input-expandable"
 		:class="{'is-active': active}"
 	>
 		<md-button
-			class="input-expandable__toggle md-icon-button"
+			class="mu-input-expandable__toggle md-icon-button"
 			@click.native="onOpen"
 		>
 			<md-icon>
@@ -13,12 +13,12 @@
 		</md-button>
 
 		<transition name="fade">
-			<div class="input-expandable__wrapper" v-if="active">
+			<div class="mu-input-expandable__wrapper" v-if="active">
 				<slot></slot>
 
 				<md-button
 					@click.native="onClose"
-					class="input-expandable__close md-icon-button"
+					class="mu-input-expandable__close md-icon-button"
 				>
 					<md-icon>close</md-icon>
 				</md-button>
@@ -59,7 +59,7 @@
 </script>
 
 <style lang="sass">
-	.input-expandable{
+	.mu-input-expandable{
 		display: flex;
 		flex-flow: row;
 		transition: flex .4s ease-out;
@@ -81,6 +81,14 @@
 		.md-input-container{
 			margin: auto;
 			transform: translate(0, -10px);
+		}
+	}
+
+	.md-toolbar{
+		.mu-input-expandable{
+			.md-input-container{
+				padding-top: 16px;
+			}
 		}
 	}
 </style>

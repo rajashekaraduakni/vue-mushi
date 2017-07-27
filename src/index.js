@@ -6,6 +6,7 @@ import Auth from './components/auth/Auth';
 import Container from './components/container/Container';
 import Snackbar from './components/snackbar/Snackbar';
 import Thumbnail from './components/thumbnail/Thumbnail';
+import Grid from './components/grid/Grid';
 import GallerySingle from './components/gallery/GallerySingle';
 import GalleryMultiple from './components/gallery/GalleryMultiple';
 import GalleryDialog from './components/gallery/GalleryDialog';
@@ -35,6 +36,7 @@ export default function (Vue, options) {
 	Vue.component('mu-editor', Editor);
 	Vue.component('mu-uploader', Uploader);
 	Vue.component('mu-search', Search);
+	Vue.component('mu-grid', Grid);
 	Vue.component('mu-input-expandable', InputExpandable);
 	Vue.component('mu-input-toggle', InputToggle);
 

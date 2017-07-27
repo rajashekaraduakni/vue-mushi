@@ -7,8 +7,13 @@
 
 			<h2 class="md-title" style="flex: 1">Photos</h2>
 
-			<mu-search>
-			</mu-search>
+			<mu-input-expandable>
+				<md-input-container md-inline>
+					<label>Search</label>
+					<md-input ref="input">
+					</md-input>
+				</md-input-container>
+			</mu-input-expandable>
 
 			<md-menu md-align-trigger md-direction="bottom left" md-size="4">
 				<md-button class="md-icon-button" md-menu-trigger>
@@ -31,15 +36,15 @@
 		</md-toolbar>
 
 		<div v-if="view == 'grid'" slot="body">
-			<mu-gallery-grid
+			<mu-grid
 				v-if="view == 'grid'"
 				ref="grid"
 				slot="body"
-				:limit="1"
+				:limit="10"
 				:images="images"
 				@select="onGridSelect"
 			>
-			</mu-gallery-grid>
+			</mu-grid>
 		</div>
 
 		<md-list
