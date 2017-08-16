@@ -81,7 +81,7 @@
 				this.$emit('delete');
 			},
 			onAccept() {
-				this.$emit('accept');
+				this.$emit('change');
 			},
 			onOpen() {
 				this.$emit('open');
