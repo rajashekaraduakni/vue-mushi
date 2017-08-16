@@ -1,13 +1,13 @@
 <template>
-	<div class="gallery">
-		<span class="gallery__title md-subheading">
+	<div class="gallery-single">
+		<span class="gallery-single__title md-subheading">
 			{{ title }}
 		</span>
 
-		<md-whiteframe class="gallery__whiteframe" md-elevation="2">
+		<md-whiteframe class="gallery-single__whiteframe" md-elevation="2">
 			<mu-thumbnail
 				:ratio="ratio"
-				@click="onSelect"
+				@click.native="onSelect"
 			>
 				<md-button
 					class="md-fab md-mini md-warn md-fab-top-right"
@@ -19,13 +19,20 @@
 		</md-whiteframe>
 
 		<md-button
-			class="gallery__action gallery__action--set md-button md-raised md-accent"
-			@click.native="onSelect"
+			class="gallery-single__action md-button md-raised md-accent"
+			@click="onSelect"
 		>
 			{{ action }} {{ title }}
 		</md-button>
 
-		<slot></slot>
+		<mu-gallery-dialog
+			ref="dialog"
+			:limit="1"
+			@open="onDialogOpen"
+			@close="onDialogClose"
+		>
+			<slot></slot>
+		</mu-gallery-dialog>
 	</div>
 </template>
 
@@ -34,6 +41,10 @@
 	export default {
 		props: {
 			value: {
+				type: Object,
+				default: () => {}
+			},
+			selected: {
 				type: Object,
 				default: () => {}
 			},
@@ -48,31 +59,41 @@
 			ratio: {
 				type: String,
 				default: '1:1'
-			}
+			},
 		},
 		methods: {
+			open (event) {
+				this.$refs.dialog.open();
+			},
+			close (event) {
+				this.$refs.dialog.close();
+			},
 			onSelect () {
 				this.$emit('select');
 			},
 			onDelete () {
 				this.$emit('delete');
-			}
+			},
+			onDialogOpen() {
+				this.$emit('open');
+			},
+			onDialogClose() {
+				this.$emit('close');
+			},
 		}
 	}
 </script>
 
-<style lang="sass" scoped>
-	.gallery{
+<style lang="sass">
+	.gallery-single{
 		width: 100%;
 		&__title{
 			display: block;
 			margin-bottom: 10px;
 		}
 		&__action{
-			&--set{
-				margin: 20px 0;
-				display: block;
-			}
+			margin: 20px 0;
+			display: block;
 		}
 		&__whiteframe{
 			display: block;

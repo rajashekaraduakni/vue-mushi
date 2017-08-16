@@ -1,6 +1,6 @@
 <template>
 	<div class="mu-container"
-		:class="{'sidenav-is-open': sidenav}"
+		:class="{'sidenav-is-open': sidenavOpen}"
 	>
 		<!-- Header Slot -->
 		<header class="mu-container__header">
@@ -37,15 +37,12 @@
 	export default {
 		data () {
 			return {
-				sidenav: false
+				sidenavOpen: false
 			}
 		},
 		methods: {
-			openSidenav () {
-				this.sidenav = true;
-			},
-			closeSidenav () {
-				this.sidenav = false;
+			sidenav (value) {
+				this.sidenavOpen = value;
 			}
 		}
 	}

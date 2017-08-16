@@ -12,14 +12,14 @@
 				class="mu-grid__item"
 				:src="image.src"
 				:active="active == image"
-				:checked="checked.indexOf(image) != -1"
-				@click="setActive(image); addChecked(image)"
+				:selected="selected.indexOf(image) != -1"
+				@click="setActive(image); addSelected(image)"
 			>
 				<!-- Remove button -->
 				<md-button
 					class="mu-grid__uncheck md-fab md-fab-top-right md-warn md-mini"
-					v-if="checked.indexOf(image) != -1"
-					@click.native.stop="removeChecked(image)"
+					v-if="selected.indexOf(image) != -1"
+					@click.native.stop="removeSelected(image)"
 				>
 					<md-icon>close</md-icon>
 				</md-button>
@@ -39,15 +39,11 @@
 				type: Array,
 				default: () => []
 			},
-			queue: {
-				type: Array,
-				default: () => []
-			}
 		},
 		data () {
 			return {
 				active: null,
-				checked: [],
+				selected: [],
 			}
 		},
 		methods: {
@@ -55,30 +51,30 @@
 				this.active = image;
 				this.$emit('select', this.active);
 			},
-			addChecked (image) {
-				// Search image in checked list
-				let index = this.checked.indexOf(image);
+			addSelected (image) {
+				// Search image in selected list
+				let index = this.selected.indexOf(image);
 
 				if (index != -1)
 					return;
 
 				// Remove last image if limit is reached
-				if (this.checked.length >= this.limit)
-					this.checked.splice(-1, 1);
+				if (this.selected.length >= this.limit)
+					this.selected.splice(-1, 1);
 
 				// Add image to check list
 				if (index == -1)
-					this.checked.push(image);
+					this.selected.push(image);
 
-				this.$emit('change', this.checked.length);
+				this.$emit('change', this.selected.length);
 			},
-			removeChecked (image) {
-				let index = this.checked.indexOf(image);
+			removeSelected (image) {
+				let index = this.selected.indexOf(image);
 
 				if (index != -1)
-					this.checked.splice(index, 1);
+					this.selected.splice(index, 1);
 
-				this.$emit('change', this.checked.length);
+				this.$emit('change', this.selected.length);
 
 				if (image == this.active)
 					this.setActive(null);

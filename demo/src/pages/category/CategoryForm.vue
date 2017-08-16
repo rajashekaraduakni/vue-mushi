@@ -32,8 +32,8 @@
 					md-flex-small="100"
 					md-flex="33"
 				>
-					<adm-category-fieldset-thumbnail>
-					</adm-category-fieldset-thumbnail>
+					<adm-media-thumbnail>
+					</adm-media-thumbnail>
 				</md-layout>
 			</md-layout>
 		</form>
@@ -45,12 +45,12 @@
 	import router from '../../router';
 	import categories from './mock';
 	import CategoryFieldset from './CategoryFieldset';
-	import CategoryFieldsetThumbnail from './CategoryFieldsetThumbnail';
+	import MediaThumbnail from '../media/MediaThumbnail';
 
 	export default {
 		components: {
 			'adm-category-fieldset': CategoryFieldset,
-			'adm-category-fieldset-thumbnail': CategoryFieldsetThumbnail
+			'adm-media-thumbnail': MediaThumbnail
 		},
 		mixins: [validateParent],
 		data () {

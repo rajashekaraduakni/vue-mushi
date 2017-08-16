@@ -36,8 +36,8 @@
 							<adm-page-fieldset-category>
 							</adm-page-fieldset-category>
 
-							<adm-page-fieldset-thumbnail>
-							</adm-page-fieldset-thumbnail>
+							<adm-media-thumbnail>
+							</adm-media-thumbnail>
 						</md-layout>
 					</md-layout>
 				</form>
@@ -65,13 +65,13 @@
 	import pages from './mock';
 	import PageFieldset from './PageFieldset';
 	import PageFieldsetCategory from './PageFieldsetCategory';
-	import PageFieldsetThumbnail from './PageFieldsetThumbnail';
+	import MediaThumbnail from '../media/MediaThumbnail';
 
 	export default {
 		components: {
 			'adm-page-fieldset': PageFieldset,
 			'adm-page-fieldset-category': PageFieldsetCategory,
-			'adm-page-fieldset-thumbnail': PageFieldsetThumbnail
+			'adm-media-thumbnail': MediaThumbnail
 		},
 		mixins: [validateParent],
 		data () {

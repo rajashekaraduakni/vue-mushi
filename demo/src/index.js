@@ -7,7 +7,6 @@ import VueBus from 'vue-bus';
 
 import App from './App';
 import router from './router';
-import config from './config';
 import store from './store';
 
 Vue.use(VueRouter);

@@ -12,11 +12,6 @@
 			<!-- Add -->
 
 			<md-dialog-actions>
-				<!-- Limit -->
-				<span class="mu-gallery-dialog__limit">
-					Selected {{ selected }} of {{ limit }}
-				</span>
-
 				<!-- Cancel -->
 				<md-button
 					class="md-warn"
@@ -39,23 +34,18 @@
 
 <script>
 	export default {
-		props: {
-			limit: {
-				type: Number,
-				default: 10
-			}
-		},
+		props: {},
 		data () {
-			return {
-				selected: 0
-			}
+			return {}
 		},
 		methods: {
 			open (event) {
 				this.$refs.dialog.open();
+				this.$emit('open');
 			},
 			close (event) {
 				this.$refs.dialog.close();
+				this.$emit('close');
 			}
 		}
 	}
@@ -65,6 +55,11 @@
 	.mu-gallery-dialog{
 		&__content{
 			position: relative;
+			display: flex;
+			flex-flow: column;
+			.mu-container{
+				flex: 1 100%;
+			}
 		}
 		&__item{
 			padding: 1px;

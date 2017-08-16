@@ -4,6 +4,11 @@ import baseWebpackConfig from './base';
 
 export default merge(baseWebpackConfig, {
 	devtool: 'cheap-module-source-map',
+	output: {
+		path: config.rootPath,
+		publicPath: config.publicPath,
+		filename: '[name].bundle.js',
+	},
 	entry: {
 		demo: './demo/src/index.js'
 	},

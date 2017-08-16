@@ -35,8 +35,8 @@
 					md-flex-small="100"
 					md-flex="33"
 				>
-					<adm-user-fieldset-avatar>
-					</adm-user-fieldset-avatar>
+					<adm-media-thumbnail>
+					</adm-media-thumbnail>
 				</md-layout>
 			</md-layout>
 		</form>
@@ -49,13 +49,13 @@
 	import users from './mock';
 	import UserFieldset from './UserFieldset';
 	import UserFieldsetPassword from './UserFieldsetPassword';
-	import UserFieldsetAvatar from './UserFieldsetAvatar';
+	import MediaThumbnail from '../media/MediaThumbnail';
 
 	export default {
 		components: {
 			'adm-user-fieldset': UserFieldset,
 			'adm-user-fieldset-password': UserFieldsetPassword,
-			'adm-user-fieldset-avatar': UserFieldsetAvatar
+			'adm-media-thumbnail': MediaThumbnail
 		},
 		mixins: [validateParent],
 		data () {

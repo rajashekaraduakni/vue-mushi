@@ -1,13 +1,11 @@
 <template>
-	<adm-panel>
-	</adm-panel>
+	<adm-panel></adm-panel>
 </template>
 
 <script>
-	import AdmPanel from './pages/panel/Panel';
 	export default {
 		components: {
-			'adm-panel': AdmPanel
+			'adm-panel': require('./pages/panel/Panel').default
 		}
 	}
 </script>

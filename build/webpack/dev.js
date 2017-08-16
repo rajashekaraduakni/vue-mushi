@@ -12,22 +12,10 @@ export default merge(baseWebpackConfig, {
 			'./demo/src/index.js'
 		]
 	},
-	module: {
-		rules: [
-			{
-				test: /\.css$/,
-				use: ['vue-style-loader', 'css-loader']
-			},
-			{
-				test: /\.scss$/,
-				use: ['vue-style-loader', 'css-loader', 'sass-loader']
-			}
-		]
-	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
-			filename: 'demo/index.html',
+			filename: 'index.html',
 			template: 'demo/index.html',
 			title: 'Vue Mushi',
 			inject: true,

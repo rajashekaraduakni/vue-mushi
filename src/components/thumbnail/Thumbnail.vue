@@ -3,7 +3,7 @@
 		class="mu-thumbnail"
 		:class="{
 			'is-active': active,
-			'is-checked': checked,
+			'is-selected': selected,
 			'is-uploading': uploading
 		}"
 		@click.native="onClick"
@@ -24,7 +24,7 @@
 				<!-- Overlay -->
 				<span
 					class="mu-thumbnail__overlay"
-					v-if="checked || active"
+					v-if="selected || active"
 				>
 					<!-- Checked icon -->
 					<transition name="scale-fade">
@@ -57,7 +57,7 @@
 				type: String,
 				default: '1:1' // 1:1 or 1/1, 4:3 or 4/3 and 16:9 or 16/9
 			},
-			checked: {
+			selected: {
 				type: Boolean,
 				default: false
 			},
@@ -135,13 +135,13 @@
 			transform: translate(-50%, -50%);
 			z-index: 5;
 		}
-		&.is-checked,
+		&.is-selected,
 		&.is-active{
 			.mu-thumbnail{
 				//
 			}
 		}
-		&.is-checked{
+		&.is-selected{
 			.mu-thumbnail{
 				&__check{
 					//background-color: rgba(black, 0.5);

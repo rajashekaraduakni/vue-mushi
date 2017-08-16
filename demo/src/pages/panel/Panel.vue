@@ -19,13 +19,12 @@
 
 	export default {
 		components: {
-			'adm-panel-sidenav': require('./PanelSidenav')
+			'adm-panel-sidenav': require('./PanelSidenav').default
 		},
-		computed: {}
 	}
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 	.panel{
 		height: 100%;
 		&__body{

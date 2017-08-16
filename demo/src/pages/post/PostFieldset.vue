@@ -93,14 +93,7 @@
 		>
 			<mu-gallery-multiple
 				ref="gallery"
-				@select="$refs.dialog.open()"
 			>
-				<adm-media-photo-dialog
-					ref="dialog"
-					:images="images"
-					:queue="queue"
-				>
-				</adm-media-photo-dialog>
 			</mu-gallery-multiple>
 		</md-layout>
 	</md-layout>
@@ -108,12 +101,10 @@
 
 <script>
 	import { validateChild } from '../../mixins/validate';
-	import MediaPhotoDialog from '../media/media-photo/MediaPhotoDialog';
 
 	export default {
 		mixins: [validateChild],
 		components: {
-			'adm-media-photo-dialog': MediaPhotoDialog
 		},
 		props: {
 			post: {

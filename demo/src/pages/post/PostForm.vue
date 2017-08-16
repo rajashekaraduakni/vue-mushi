@@ -23,8 +23,8 @@
 					<adm-post-fieldset-category>
 					</adm-post-fieldset-category>
 
-					<adm-post-fieldset-thumbnail>
-					</adm-post-fieldset-thumbnail>
+					<adm-media-thumbnail>
+					</adm-media-thumbnail>
 				</md-layout>
 			</md-layout>
 		</form>
@@ -38,14 +38,14 @@
 	import posts from './mock';
 	import PostFieldset from './PostFieldset';
 	import PostFieldsetCategory from './PostFieldsetCategory';
-	import PostFieldsetThumbnail from './PostFieldsetThumbnail';
+	import MediaThumbnail from '../media/MediaThumbnail';
 
 	export default {
 		mixins: [validateParent],
 		components: {
 			'adm-post-fieldset': PostFieldset,
 			'adm-post-fieldset-category': PostFieldsetCategory,
-			'adm-post-fieldset-thumbnail': PostFieldsetThumbnail
+			'adm-media-thumbnail': MediaThumbnail
 		},
 		data () {
 			return {
