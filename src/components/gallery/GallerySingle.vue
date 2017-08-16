@@ -4,8 +4,13 @@
 			{{ title }}
 		</span>
 
-		<md-whiteframe class="gallery-single__whiteframe" md-elevation="2">
+		<md-whiteframe
+			class="gallery-single__whiteframe"
+			md-elevation="2"
+			v-if="value.src"
+		>
 			<mu-thumbnail
+				:src="value.src"
 				:ratio="ratio"
 				@click.native="onSelect"
 			>
@@ -28,8 +33,9 @@
 		<mu-gallery-dialog
 			ref="dialog"
 			:limit="1"
-			@open="onDialogOpen"
-			@close="onDialogClose"
+			@open="onOpen"
+			@close="onClose"
+			@accept="onAccept"
 		>
 			<slot></slot>
 		</mu-gallery-dialog>
@@ -74,10 +80,13 @@
 			onDelete () {
 				this.$emit('delete');
 			},
-			onDialogOpen() {
+			onAccept() {
+				this.$emit('accept');
+			},
+			onOpen() {
 				this.$emit('open');
 			},
-			onDialogClose() {
+			onClose() {
 				this.$emit('close');
 			},
 		}
