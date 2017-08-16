@@ -4,7 +4,6 @@
 		:class="{
 			'is-active': active,
 			'is-selected': selected,
-			'is-uploading': uploading
 		}"
 		@click.native="onClick"
 
@@ -17,7 +16,7 @@
 
 			<!-- The background -->
 			<div class="mu-thumbnail__cover">
-				<img :src="src" class="mu-thumbnail__background" alt="People">
+				<img :src="src" class="mu-thumbnail__background">
 			</div>
 
 			<transition name="fade">
@@ -60,14 +59,6 @@
 			selected: {
 				type: Boolean,
 				default: false
-			},
-			uploading: {
-				type: Boolean,
-				default: false
-			},
-			progress: {
-				type: Number,
-				default: 0
 			}
 		},
 		methods: {

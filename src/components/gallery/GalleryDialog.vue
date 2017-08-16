@@ -2,6 +2,8 @@
 	<md-dialog
 		class="mu-gallery-dialog"
 		ref="dialog"
+		@open="onOpen"
+		@close="onClose"
 	>
 		<md-dialog-content class="mu-gallery-dialog__content">
 			<slot></slot>
@@ -23,7 +25,7 @@
 				<!-- Accept -->
 				<md-button
 					class="md-primary"
-					@click.native="close"
+					@click.native="onAccept"
 				>
 					Accept
 				</md-button>
@@ -41,11 +43,19 @@
 		methods: {
 			open (event) {
 				this.$refs.dialog.open();
-				this.$emit('open');
 			},
 			close (event) {
 				this.$refs.dialog.close();
-				this.$emit('close');
+			},
+			onAccept () {
+				this.close();
+				this.$emit('accept');
+			},
+			onOpen () {
+				this.$emit('open');
+			},
+			onClose () {
+				this.$emit('close')
 			}
 		}
 	}
