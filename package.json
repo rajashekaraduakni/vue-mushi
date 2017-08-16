@@ -1,6 +1,6 @@
 {
   "name": "vue-mushi",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Vue plugin with many CMS related utility",
   "main": "dist/mushi.bundle.js",
   "scripts": {
