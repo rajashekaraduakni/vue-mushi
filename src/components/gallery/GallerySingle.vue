@@ -7,7 +7,7 @@
 		<md-whiteframe
 			class="gallery-single__whiteframe"
 			md-elevation="2"
-			v-if="value.src"
+			v-if="value"
 		>
 			<mu-thumbnail
 				:src="value.src"
@@ -48,7 +48,7 @@
 		props: {
 			value: {
 				type: Object,
-				default: () => {}
+				default: () => null
 			},
 			selected: {
 				type: Object,
